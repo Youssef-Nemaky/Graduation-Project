@@ -41,7 +41,7 @@
 #define LCD_MESSAGE_DELAY 2000
 
 #define numOfAvAuthMethods 3
-#define NUMBER_OF_CHARACTERS_IN_PASSCODE 5
+#define PASSCODE_LENGTH 5
 
 #define INCORRECT 0
 #define CORRECT 1
@@ -49,6 +49,25 @@
 #define LOCK 2
 #define FREE_SYSTEM 5
 #define LOCK_TIME 60000
+
+
+/* New Day, New Beggining */
+#define FIRST_TIME_CMD (1u)
+#define PASSWORD_MISSMATCH_CMD (2u)
+#define WRONG_PASSWORD_CMD (3u)
+#define TAG_FAILED_CMD (4u)
+#define LOOK_AT_CAMERA_CMD (5u)
+#define ACCESS_GRANTED_CMD (6u)
+#define LOCK_CMD (7u)
+#define SETUP_COMPLETE_CMD (8u)
+#define FACE_SETUP_FAILED_CMD (9u)
+
+#define SETUP_PASSWORD_CMD  (10u)
+#define SETUP_RFID_CMD (11u)
+#define GET_PASSWORD_CMD (12u)
+#define GET_RFID_CMD (13u)
+#define DISPLAY_OPTIONS_CMD (14u)
+#define GET_CHOSEN_OPTION_CMD (15u)
 /*******************************************************************************
  *                         		Types Declaration                              *
  *******************************************************************************/
@@ -160,7 +179,12 @@ uint8 faceAuth(void);
 void systemAuth(void);
 
 
+void getRfidTag(void);
+void rfidReadTag(uint8 * a_rfid_tag);
 
+void getPassword(void);
+
+void getOption(void);
 
 #endif /* HMI_ECU_H_ */
 

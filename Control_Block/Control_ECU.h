@@ -22,7 +22,13 @@
  *******************************************************************************/
 
 #include "Std_Types.h"
-
+#include "Dio.h"
+#include "Port.h"
+#include "Control_ECU.h"
+#include "Uart.h"
+#include "I2c.h"
+#include "external_eeprom.h"
+#include "Sw_Delay.h"
 /*******************************************************************************
  *                                Definitions                                 *
  *******************************************************************************/
@@ -37,7 +43,34 @@
 
 #define RFID_UNIQUE_ID_LENGTH (8u)
 
+/* EEPROM Addresses */
+#define FIRST_TIME_ADDRESS 0x000
+#define PASSWORD_ADDRESS 0x020
+#define RFID_ADDRESS 0x040
+#define PASSWORD_LENGTH 5
 
+/* New Day, New Beggining */
+/* HMI Commands */
+#define FIRST_TIME_CMD (1u)
+#define PASSWORD_MISSMATCH_CMD (2u)
+#define WRONG_PASSWORD_CMD (3u)
+#define TAG_FAILED_CMD (4u)
+#define LOOK_AT_CAMERA_CMD (5u)
+#define ACCESS_GRANTED_CMD (6u)
+#define LOCK_CMD (7u)
+#define SETUP_COMPLETE_CMD (8u)
+#define FACE_SETUP_FAILED_CMD (9u)
+
+#define SETUP_PASSWORD_CMD  (10u)
+#define SETUP_RFID_CMD (11u)
+#define GET_PASSWORD_CMD (12u)
+#define GET_RFID_CMD (13u)
+#define DISPLAY_OPTIONS_CMD (14u)
+#define GET_CHOSEN_OPTION_CMD (15u)
+
+/* Raspberry Pi Commands */
+#define RASP_FIRST_TIME_CMD 'y'
+#define FACE_FAILED_ERROR 'R'
 /*******************************************************************************
  *                         		Types Declaration                              *
  *******************************************************************************/
@@ -56,16 +89,6 @@ typedef enum
  *******************************************************************************/
 
 /*******************************************************************************************************
- * [Name]: Delay_ms
- * [Parameters]: uint64 n
- * [Return]: void (none)
- * [Description]: The Function responsible for The Delay in the internal Operations of the peripherals
- * and Hardware Components that don't need accurate timing using Timers like (Systic or GPT).
- ********************************************************************************************************/
-void Delay_ms(uint64 n);
-
-
-/*******************************************************************************************************
  * [Name]: Drivers_Init
  * [Parameters]: void (none)
  * [Return]: void (none)
@@ -74,68 +97,14 @@ void Delay_ms(uint64 n);
  ********************************************************************************************************/
 void Drivers_Init(void);
 
+void systemSetup(void);
 
-/*******************************************************************************************************
- * [Name]: Send_First_Time_Check
- * [Parameters]: void (none)
- * [Return]: void (none)
- * [Description]: he Function responsible for Sending a certain Byte ('Y' or 'N') to HMI Block to check
- * whether its the first time use of the system or not.
- ********************************************************************************************************/
-void Send_First_Time_Check(void);
+void passwordSetup(void);
 
+void rfidSetup(void);
 
-/*******************************************************************************************************
- * [Name]: Passcode_Receive_and_Check
- * [Parameters]: void (none)
- * [Return]: void (none)
- * [Description]: The Function responsible for checking that both Pass Codes entered by the user are
- * the same and receiving it via UART from HMI Block.
- ********************************************************************************************************/
-void Passcode_Receive_and_Check(void);
+void faceSetup(void);
 
-
-/*******************************************************************************************************
- * [Name]: Save_Passcode
- * [Parameters]: uint8 *pass
- * [Return]: void (none)
- * [Description]: Function Responsible for Saving The Passcode in The EEPROM in Specific locations
- ********************************************************************************************************/
-void Save_Passcode(uint8 *pass);
-
-
-/*******************************************************************************************************
- * [Name]: Passcode_Check
- * [Parameters]: void (none)
- * [Return]: void (none)
- * [Description]: The Function responsible for Checking that every element in Pass1 equals its correspondent
- * in Pass2. in case of True The System will Unlock The Engine for the user as long as there is no other
- * authentication method is required. in case of False for Three Times The System will send a warning
- * Notification to the owner via Mobile Application and a certain Message will be displayed on
- * The LCD screen.
- ********************************************************************************************************/
-uint8 Passcode_Check(void);
-
-
-/*******************************************************************************************************
- * [Name]: Block_System
- * [Parameters]: void (none)
- * [Return]: void (none)
- * [Description]: The Function responsible for Blocking The System at a certain Point
- ********************************************************************************************************/
-void Block_System(void);
-
-
-/*******************************************************************************************************
- * [Name]: Free_System
- * [Parameters]: void (none)
- * [Return]: void (none)
- * [Description]: The Function responsible for getting The System back from Blocked state to Free State.
- ********************************************************************************************************/
-void Free_System(void);
-
-
-void rfidSave(uint8 * rfidTag, uint8);
 
 #endif /* CONTROL_ECU_H_ */
 

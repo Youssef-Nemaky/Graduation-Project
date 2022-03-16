@@ -61,11 +61,14 @@ static uint8 KEYPAD_4x3_adjustSwitchNumber(uint8 a_switchNumber){
 static uint8 KEYPAD_4x4_adjustSwitchNumber(uint8 a_switchNumber){
     uint8 pressedKey;
     switch (a_switchNumber){
+    case 1:   pressedKey = 1;                break;
+    case 2:   pressedKey = 2;                break;
+    case 3:   pressedKey = 3;                break;
     case 4:   pressedKey = 'A';              break;
-    case 5:   pressedKey = 4;                break;
+    case 5:   pressedKey = 4;                break;            
     case 6:   pressedKey = 5;                break;
     case 7:   pressedKey = 6;                break;
-    case 8:   pressedKey = 'B';              break;            
+    case 8:   pressedKey = 'B';              break;
     case 9:   pressedKey = 7;                break;
     case 10:  pressedKey = 8;                break;
     case 11:  pressedKey = 9;                break;
@@ -74,7 +77,6 @@ static uint8 KEYPAD_4x4_adjustSwitchNumber(uint8 a_switchNumber){
     case 14:  pressedKey = 0;                break;
     case 15:  pressedKey = '#';              break;
     case 16:  pressedKey = 'D';              break;
-    default: pressedKey = a_switchNumber;    break;
     }
     return pressedKey;
 }
