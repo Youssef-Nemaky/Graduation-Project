@@ -1009,11 +1009,11 @@
                 </option>
                 <option>
                     <name>CCLmiftdiUsbSerialNo</name>
-                    <state>0E22E950</state>
+                    <state></state>
                 </option>
                 <option>
                     <name>CCLmiftdiUsbSerialNoSelect</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCLmiftdiResetList</name>

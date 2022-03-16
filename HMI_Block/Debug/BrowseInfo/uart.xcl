@@ -1,13 +1,13 @@
-"D:\Embedded_non-stop\Graduation Project\HMI_Block\Uart.c"
+"D:\Embedded_non-stop\Graduation Project\HMI_Block\uart.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-D:\Embedded_non-stop\Graduation Project\HMI_Block\Debug\BrowseInfo\Uart.pbi.dep
+D:\Embedded_non-stop\Graduation Project\HMI_Block\Debug\BrowseInfo\uart.pbi.dep
 -o
-D:\Embedded_non-stop\Graduation Project\HMI_Block\Debug\BrowseInfo\Uart.pbi
+D:\Embedded_non-stop\Graduation Project\HMI_Block\Debug\BrowseInfo\uart.pbi
 -I
 D:\Embedded_non-stop\Graduation Project\HMI_Block
 -I

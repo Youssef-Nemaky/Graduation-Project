@@ -95,15 +95,18 @@ int main(void)
             LCD_displayString("1: Unlock The Engine");
             LCD_moveCursor(1, 0);
             LCD_displayString("2: Change Passcode");
-            break;
-        case GET_CHOSEN_OPTION_CMD:
             getOption();
             break;
         case ACCESS_GRANTED_CMD:
             LCD_displayString("Access Granted!");
             Delay_ms(LCD_MESSAGE_DELAY);
+            break;
         case LOCK_CMD:
             LCD_displayString("7ramy");
+            break;
+        case PASSWORD_CHANGED_CMD:
+            LCD_displayString("Password Changed!");
+            break;
         default:
             LCD_displayString("IDK WHO U ARE!!");
             break;
@@ -190,7 +193,7 @@ void rfidReadTag(uint8 * a_rfid_tag){
             if (byte == CARD_FOUND)
             {
                 LCD_clearScreen();
-                for (byte = 0;byte < 4;byte++) {
+                for (byte = 0;byte < 8;byte++) {
                     LCD_displayHex(a_rfid_tag[byte]);
                 }
                 Delay_ms(2500);

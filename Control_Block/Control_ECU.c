@@ -26,13 +26,13 @@
 System_State state = BLOCKED;
 
 /* Global Variable that holds The Value of Times The Passcode is entered in case it was entered wrong */
-uint8 passWrongAttempts = 0;
-
-uint8 rfidWrongAttempts = 0;
-
-uint8 faceWrongAttempts = 0;
+uint8 g_numWrongAttempts = 0;
 
 uint8 g_first_time = 0;
+
+uint8 numOfUsedAuthMethods = 2;
+
+uint8 (*authArray[numOfAvAuthMethods])(void) = {passwordAuth, rfidAuth, faceAuth};
 
 /*******************************************************************************
  *                       	  Functions Definitions                            *
@@ -56,17 +56,39 @@ void Drivers_Init(void)
 
 
 int main(void){
+    uint8 option = 0;
     Drivers_Init();
     Delay_ms(1000); /* give time for the HMI block to finish initialization */
 
     /* Read the EEPROM address for first time use */
     EEPROM_readByte(FIRST_TIME_ADDRESS, &g_first_time);
 
+    EEPROM_readByte(WRONG_ATTEMPTS_ADDRESS, &g_numWrongAttempts);
+
     if(g_first_time == 0x00){
         systemSetup();
     }
     while(1){
-
+        Uart_SendByte(HMI_BLOCK_UART, DISPLAY_OPTIONS_CMD);
+        option = Uart_ReceiveByte(HMI_BLOCK_UART);
+        switch (option)
+        {
+        case 1:
+            if(systemAuth()){
+                /* OUTPUT 1 to a pin */
+                Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_HIGH);
+                Uart_SendByte(HMI_BLOCK_UART, ACCESS_GRANTED_CMD);
+            }
+            break;
+        case 2:
+            if(systemAuth()){
+                passwordSetup();
+                Uart_SendByte(HMI_BLOCK_UART, PASSWORD_CHANGED_CMD);
+            }
+            break;
+        default:
+            break;
+        }
     }
 }
 
@@ -76,7 +98,7 @@ void systemSetup(void){
     Uart_SendByte(HMI_BLOCK_UART, FIRST_TIME_CMD);
     passwordSetup();
     rfidSetup();
-    faceSetup();
+    //faceSetup();
     
     /* Send setup complete command to HMI */
     Uart_SendByte(HMI_BLOCK_UART, SETUP_COMPLETE_CMD);
@@ -89,7 +111,7 @@ void passwordSetup(void){
     uint8 pass1[PASSWORD_LENGTH];
     uint8 pass2[PASSWORD_LENGTH];
     
-    uint8 passwordCounter = 0;
+    uint8 uidCounter = 0;
     boolean isMatch = TRUE;
 
     do{
@@ -98,18 +120,18 @@ void passwordSetup(void){
         Uart_SendByte(HMI_BLOCK_UART, SETUP_PASSWORD_CMD);
 
         /* Get the 1st password from HMI */
-        for(passwordCounter = 0; passwordCounter < PASSWORD_LENGTH; passwordCounter++){
-            pass1[passwordCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
+        for(uidCounter = 0; uidCounter < PASSWORD_LENGTH; uidCounter++){
+            pass1[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
         }
 
         /* Get the 2nd password from HMI */
-        for (passwordCounter = 0; passwordCounter < PASSWORD_LENGTH; passwordCounter++) {
-            pass2[passwordCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
+        for (uidCounter = 0; uidCounter < PASSWORD_LENGTH; uidCounter++) {
+            pass2[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
         }
 
         /* Check if the two passwords match each other */
-        for(passwordCounter = 0; passwordCounter < PASSWORD_LENGTH; passwordCounter++){
-            if(pass1[passwordCounter] != pass2[passwordCounter]){
+        for(uidCounter = 0; uidCounter < PASSWORD_LENGTH; uidCounter++){
+            if(pass1[uidCounter] != pass2[uidCounter]){
                 isMatch = FALSE;
                 Uart_SendByte(HMI_BLOCK_UART, PASSWORD_MISSMATCH_CMD);
                 break;
@@ -118,8 +140,8 @@ void passwordSetup(void){
     } while(isMatch == FALSE); /* Loop until the two passwords match each other */
 
     /* save the password into the EEPROM */
-    for (passwordCounter = 0; passwordCounter < PASSWORD_LENGTH; passwordCounter++) {
-        EEPROM_writeByte(PASSWORD_ADDRESS + passwordCounter, pass1[passwordCounter]);
+    for (uidCounter = 0; uidCounter < PASSWORD_LENGTH; uidCounter++) {
+        EEPROM_writeByte(PASSWORD_ADDRESS + uidCounter, pass1[uidCounter]);
         Delay_ms(5);
     }
 } /* end of passwordSetup function */
@@ -149,11 +171,13 @@ void rfidSetup(void){
     /* Save the 1st unique RFID to the EEPROM */
     for(uidCounter = 0; uidCounter < RFID_UNIQUE_ID_LENGTH; uidCounter++){
         EEPROM_writeByte(RFID_ADDRESS + uidCounter, rfidTag1[uidCounter]);
+        Delay_ms(5);
     }
 
     /* Save the 2nd unique RFID to the EEPROM */
     for(uidCounter = 0; uidCounter < RFID_UNIQUE_ID_LENGTH; uidCounter++){
         EEPROM_writeByte(RFID_ADDRESS + RFID_UNIQUE_ID_LENGTH + uidCounter, rfidTag2[uidCounter]);
+        Delay_ms(5);
     }
 } /* end of rfidSetup function */
 
@@ -170,10 +194,131 @@ void faceSetup(void){
         /* Get the response from raspberry pi */
         faceResponse = Uart_ReceiveByte(RASPBERRY_PI_UART);
         
-        if(faceResponse == FACE_FAILED_ERROR){
+        if(faceResponse == RASP_SETUP_FAILED_ERROR){
             Uart_SendByte(HMI_BLOCK_UART, FACE_SETUP_FAILED_CMD);
             Uart_SendByte(HMI_BLOCK_UART, LOOK_AT_CAMERA_CMD);
-            Delay_ms(3000);
+            Delay_ms(1000);
         }
-    } while(faceResponse == FACE_FAILED_ERROR); /* Loop until the */
+    } while(faceResponse == RASP_SETUP_FAILED_ERROR); /* Loop until a valid response */
+}
+
+boolean systemAuth(void){
+    uint8 authCounter = 0;
+    for(authCounter = 0; authCounter < numOfUsedAuthMethods; authCounter++){
+        g_numWrongAttempts = 0;
+        if((*authArray[authCounter])() == FALSE){
+            Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_LOW);
+            Uart_SendByte(HMI_BLOCK_UART, LOCK_CMD);
+            Delay_ms(5000);
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
+
+
+
+uint8 passwordAuth(void){
+    uint8 hmiPass[PASSWORD_LENGTH];
+    uint8 eepromPass[PASSWORD_LENGTH];
+
+    uint8 uidCounter = 0;
+
+    boolean isMatch = TRUE;
+
+    do{
+        isMatch = TRUE;
+        Uart_SendByte(HMI_BLOCK_UART, GET_PASSWORD_CMD);
+        for (uidCounter = 0; uidCounter < PASSWORD_LENGTH; uidCounter++) {
+            hmiPass[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
+        }
+
+        for (uidCounter = 0; uidCounter < PASSWORD_LENGTH; uidCounter++) {
+            EEPROM_readByte(PASSWORD_ADDRESS + uidCounter, &eepromPass[uidCounter]);
+            if (eepromPass[uidCounter] != hmiPass[uidCounter]) {
+                isMatch = FALSE;
+                break;
+            }
+        }
+
+        if(isMatch == FALSE){
+            Uart_SendByte(HMI_BLOCK_UART, WRONG_PASSWORD_CMD);
+            g_numWrongAttempts++;
+            if(g_numWrongAttempts >= 3){
+                return FALSE;
+            }
+        }
+    } while(isMatch == FALSE);
+
+    return TRUE;
+}
+
+
+
+uint8 rfidAuth(void){
+    uint8 hmiRfid[RFID_UNIQUE_ID_LENGTH];
+    uint8 eepromRfid1[RFID_UNIQUE_ID_LENGTH];
+    uint8 eepromRfid2[RFID_UNIQUE_ID_LENGTH];
+
+    uint8 uidCounter = 0;
+
+    boolean isMatch = TRUE;
+
+    do{
+        isMatch = TRUE;
+        Uart_SendByte(HMI_BLOCK_UART, GET_RFID_CMD);
+
+        for (uidCounter = 0; uidCounter < RFID_UNIQUE_ID_LENGTH; uidCounter++) {
+            hmiRfid[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
+        }
+
+        for (uidCounter = 0; uidCounter < RFID_UNIQUE_ID_LENGTH; uidCounter++) {
+            EEPROM_readByte(RFID_ADDRESS + uidCounter, &eepromRfid1[uidCounter]);
+            EEPROM_readByte(RFID_ADDRESS + RFID_UNIQUE_ID_LENGTH + uidCounter, &eepromRfid2[uidCounter]);
+
+            if (( hmiRfid[uidCounter] != eepromRfid1[uidCounter] ) && ( hmiRfid[uidCounter] != eepromRfid2[uidCounter] )) {
+                isMatch = FALSE;
+                break;
+            }
+        }
+
+        if(isMatch == FALSE){
+            Uart_SendByte(HMI_BLOCK_UART, TAG_FAILED_CMD);
+            g_numWrongAttempts++;
+            if(g_numWrongAttempts >= 3){
+                return FALSE;
+            }
+        }
+    } while(isMatch == FALSE);
+
+    return TRUE;
+}
+
+
+
+uint8 faceAuth(void){
+    /* A variable to hold the response on the image taken from the raspberry pi */
+    uint8 faceResponse = 0;
+    /* Send look at camera command to the HMI to envoke the user to look at the user */
+    Uart_SendByte(HMI_BLOCK_UART, LOOK_AT_CAMERA_CMD);
+    Delay_ms(3000);
+
+    do{
+        /* Send first time command to raspberry pi */
+        Uart_SendByte(RASPBERRY_PI_UART, RASP_AUTH_CMD);
+        /* Get the response from raspberry pi */
+        faceResponse = Uart_ReceiveByte(RASPBERRY_PI_UART);
+        
+        if(faceResponse == RASP_AUTH_FAILURE_CMD){
+            Uart_SendByte(HMI_BLOCK_UART, FACE_SETUP_FAILED_CMD);
+            Uart_SendByte(HMI_BLOCK_UART, LOOK_AT_CAMERA_CMD);
+            Delay_ms(1000);
+            g_numWrongAttempts++;
+            if(g_numWrongAttempts >= 3){
+                return FALSE;
+            }
+        }
+    } while(faceResponse == RASP_AUTH_FAILURE_CMD); /* Loop until a valid response */
+
+    return TRUE;
 }

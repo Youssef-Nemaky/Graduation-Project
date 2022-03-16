@@ -49,21 +49,21 @@ const Port_ConfigType Port_Configuration = {
     PORT_A, PORT_A_PIN_2, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
     PORT_A, PORT_A_PIN_3, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
     PORT_A, PORT_A_PIN_4, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
-    PORT_A, PORT_A_PIN_5, PORT_PIN_OUT, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
-    PORT_A, PORT_A_PIN_6, PORT_PIN_OUT, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
-    PORT_A, PORT_A_PIN_7, PORT_PIN_OUT, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
+    PORT_A, PORT_A_PIN_5, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
+    PORT_A, PORT_A_PIN_6, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
+    PORT_A, PORT_A_PIN_7, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
 
     /* PORT B pins*/
     /* UART1 Pins */
     PORT_B, PORT_B_PIN_0, PORT_PIN_IN, PORT_MODE_1, PULL_DOWN, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
     PORT_B, PORT_B_PIN_1, PORT_PIN_IN, PORT_MODE_1, PULL_DOWN, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
     
-    PORT_B, PORT_B_PIN_2, PORT_PIN_IN, PORT_MODE_0, PULL_DOWN, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
-    PORT_B, PORT_B_PIN_3, PORT_PIN_IN, PORT_MODE_0, PULL_DOWN, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
-    PORT_B, PORT_B_PIN_4, PORT_PIN_OUT, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
-    PORT_B, PORT_B_PIN_5, PORT_PIN_OUT, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
-    PORT_B, PORT_B_PIN_6, PORT_PIN_OUT, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
-    PORT_B, PORT_B_PIN_7, PORT_PIN_OUT, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
+    PORT_B, PORT_B_PIN_2, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
+    PORT_B, PORT_B_PIN_3, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
+    PORT_B, PORT_B_PIN_4, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
+    PORT_B, PORT_B_PIN_5, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
+    PORT_B, PORT_B_PIN_6, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
+    PORT_B, PORT_B_PIN_7, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
     
     /* PORT C pins*/
     PORT_C, PORT_C_PIN_0, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
@@ -99,7 +99,8 @@ const Port_ConfigType Port_Configuration = {
     
     /* PORT F pins*/
     PORT_F, PORT_F_PIN_0, PORT_PIN_IN,  PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
-    PORT_F, PORT_F_PIN_1, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
+    /* LED */
+    PORT_F, PORT_F_PIN_1, PORT_PIN_OUT, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
     PORT_F, PORT_F_PIN_2, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
     PORT_F, PORT_F_PIN_3, PORT_PIN_IN, PORT_MODE_0, OFF, STD_LOW, changeable, changeable, OPEN_DRAIN_OFF,
     PORT_F, PORT_F_PIN_4, PORT_PIN_IN,  PORT_MODE_0, OFF, STD_LOW, changeable,  changeable ,OPEN_DRAIN_OFF,

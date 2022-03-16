@@ -68,6 +68,7 @@
 #define GET_RFID_CMD (13u)
 #define DISPLAY_OPTIONS_CMD (14u)
 #define GET_CHOSEN_OPTION_CMD (15u)
+#define PASSWORD_CHANGED_CMD (16u)
 /*******************************************************************************
  *                         		Types Declaration                              *
  *******************************************************************************/

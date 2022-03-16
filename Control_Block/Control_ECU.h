@@ -47,7 +47,11 @@
 #define FIRST_TIME_ADDRESS 0x000
 #define PASSWORD_ADDRESS 0x020
 #define RFID_ADDRESS 0x040
+#define WRONG_ATTEMPTS_ADDRESS 0x060
+
 #define PASSWORD_LENGTH 5
+
+#define numOfAvAuthMethods 3
 
 /* New Day, New Beggining */
 /* HMI Commands */
@@ -67,10 +71,13 @@
 #define GET_RFID_CMD (13u)
 #define DISPLAY_OPTIONS_CMD (14u)
 #define GET_CHOSEN_OPTION_CMD (15u)
+#define PASSWORD_CHANGED_CMD (16u)
 
 /* Raspberry Pi Commands */
 #define RASP_FIRST_TIME_CMD 'y'
-#define FACE_FAILED_ERROR 'R'
+#define RASP_AUTH_CMD 'n'
+#define RASP_AUTH_FAILURE_CMD 'F'
+#define RASP_SETUP_FAILED_ERROR 'R'
 /*******************************************************************************
  *                         		Types Declaration                              *
  *******************************************************************************/
@@ -105,6 +112,10 @@ void rfidSetup(void);
 
 void faceSetup(void);
 
+uint8 faceAuth(void);
+uint8 rfidAuth(void);
+uint8 passwordAuth(void);
+boolean systemAuth(void);
 
 #endif /* CONTROL_ECU_H_ */
 
