@@ -65,7 +65,7 @@ int main(void){
 
     EEPROM_readByte(WRONG_ATTEMPTS_ADDRESS, &g_numWrongAttempts);
 
-    if(g_first_time == 0x00){
+    if(g_first_time != 0x00){
         systemSetup();
     }
     while(1){

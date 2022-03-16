@@ -98,660 +98,862 @@
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@381@macro@DIO_CFG_H",
+    "ID": "c:Dio.h@347@macro@DIO_H",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_CFG_H",
+    "display": "DIO_H",
     "location": {
       "column": "9",
       "line": "13",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_CFG_H",
+    "name": "DIO_H",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@511@macro@DIO_CFG_SW_MAJOR_VERSION",
+    "ID": "c:Dio.h@405@macro@DIO_VENDOR_ID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_CFG_SW_MAJOR_VERSION",
+    "display": "DIO_VENDOR_ID",
     "location": {
       "column": "9",
-      "line": "20",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "16",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_CFG_SW_MAJOR_VERSION",
+    "name": "DIO_VENDOR_ID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@563@macro@DIO_CFG_SW_MINOR_VERSION",
+    "ID": "c:Dio.h@462@macro@DIO_MODULE_ID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_CFG_SW_MINOR_VERSION",
+    "display": "DIO_MODULE_ID",
     "location": {
       "column": "9",
-      "line": "21",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "19",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_CFG_SW_MINOR_VERSION",
+    "name": "DIO_MODULE_ID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@615@macro@DIO_CFG_SW_PATCH_VERSION",
+    "ID": "c:Dio.h@520@macro@DIO_INSTANCE_ID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_CFG_SW_PATCH_VERSION",
+    "display": "DIO_INSTANCE_ID",
     "location": {
       "column": "9",
       "line": "22",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_CFG_SW_PATCH_VERSION",
+    "name": "DIO_INSTANCE_ID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@704@macro@DIO_CFG_AR_RELEASE_MAJOR_VERSION",
+    "ID": "c:Dio.h@587@macro@DIO_SW_MAJOR_VERSION",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_CFG_AR_RELEASE_MAJOR_VERSION",
+    "display": "DIO_SW_MAJOR_VERSION",
     "location": {
       "column": "9",
       "line": "27",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_CFG_AR_RELEASE_MAJOR_VERSION",
+    "name": "DIO_SW_MAJOR_VERSION",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@755@macro@DIO_CFG_AR_RELEASE_MINOR_VERSION",
+    "ID": "c:Dio.h@632@macro@DIO_SW_MINOR_VERSION",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_CFG_AR_RELEASE_MINOR_VERSION",
+    "display": "DIO_SW_MINOR_VERSION",
     "location": {
       "column": "9",
       "line": "28",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_CFG_AR_RELEASE_MINOR_VERSION",
+    "name": "DIO_SW_MINOR_VERSION",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@806@macro@DIO_CFG_AR_RELEASE_PATCH_VERSION",
+    "ID": "c:Dio.h@677@macro@DIO_SW_PATCH_VERSION",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_CFG_AR_RELEASE_PATCH_VERSION",
+    "display": "DIO_SW_PATCH_VERSION",
     "location": {
       "column": "9",
       "line": "29",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_CFG_AR_RELEASE_PATCH_VERSION",
+    "name": "DIO_SW_PATCH_VERSION",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@914@macro@DIO_DEV_ERROR_DETECT",
+    "ID": "c:Dio.h@759@macro@DIO_AR_RELEASE_MAJOR_VERSION",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_DEV_ERROR_DETECT",
+    "display": "DIO_AR_RELEASE_MAJOR_VERSION",
     "location": {
       "column": "9",
-      "line": "32",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "34",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_DEV_ERROR_DETECT",
+    "name": "DIO_AR_RELEASE_MAJOR_VERSION",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@1017@macro@DIO_VERSION_INFO_API",
+    "ID": "c:Dio.h@804@macro@DIO_AR_RELEASE_MINOR_VERSION",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_VERSION_INFO_API",
+    "display": "DIO_AR_RELEASE_MINOR_VERSION",
     "location": {
       "column": "9",
       "line": "35",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_VERSION_INFO_API",
+    "name": "DIO_AR_RELEASE_MINOR_VERSION",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@1136@macro@DIO_FLIP_CHANNEL_API",
+    "ID": "c:Dio.h@849@macro@DIO_AR_RELEASE_PATCH_VERSION",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_FLIP_CHANNEL_API",
+    "display": "DIO_AR_RELEASE_PATCH_VERSION",
     "location": {
       "column": "9",
-      "line": "38",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "36",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_FLIP_CHANNEL_API",
+    "name": "DIO_AR_RELEASE_PATCH_VERSION",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@1302@macro@DIO_CONFIGURED_CHANNLES",
+    "ID": "c:Dio.h@931@macro@DIO_INITIALIZED",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_CONFIGURED_CHANNLES",
+    "display": "DIO_INITIALIZED",
     "location": {
       "column": "9",
-      "line": "43",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "41",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_CONFIGURED_CHANNLES",
+    "name": "DIO_INITIALIZED",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@2111@macro@DIO_CONFIGURED_GROUP_CHANNELS",
+    "ID": "c:Dio.h@976@macro@DIO_NOT_INITIALIZED",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DIO_CONFIGURED_GROUP_CHANNELS",
+    "display": "DIO_NOT_INITIALIZED",
     "location": {
       "column": "9",
-      "line": "61",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "42",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DIO_CONFIGURED_GROUP_CHANNELS",
+    "name": "DIO_NOT_INITIALIZED",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@2163@macro@DioConf_LCD_GRP_INDEX",
+    "ID": "c:Dio.h@2565@macro@DIO_READ_CHANNEL_SID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_LCD_GRP_INDEX",
+    "display": "DIO_READ_CHANNEL_SID",
     "location": {
       "column": "9",
-      "line": "62",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "78",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_LCD_GRP_INDEX",
+    "name": "DIO_READ_CHANNEL_SID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@2313@macro@DioConf_LCD_GRP_PTR",
+    "ID": "c:Dio.h@2661@macro@DIO_WRITE_CHANNEL_SID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_LCD_GRP_PTR",
+    "display": "DIO_WRITE_CHANNEL_SID",
     "location": {
       "column": "9",
-      "line": "65",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "81",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_LCD_GRP_PTR",
+    "name": "DIO_WRITE_CHANNEL_SID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@2471@macro@DioConf_LCD_GRP_PORT_NUM",
+    "ID": "c:Dio.h@2753@macro@DIO_READ_PORT_SID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_LCD_GRP_PORT_NUM",
+    "display": "DIO_READ_PORT_SID",
     "location": {
       "column": "9",
-      "line": "69",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "84",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_LCD_GRP_PORT_NUM",
+    "name": "DIO_READ_PORT_SID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@2610@macro@DioConf_LCD_GRP_MASK",
+    "ID": "c:Dio.h@2846@macro@DIO_WRITE_PORT_SID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_LCD_GRP_MASK",
+    "display": "DIO_WRITE_PORT_SID",
     "location": {
       "column": "9",
-      "line": "74",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "87",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_LCD_GRP_MASK",
+    "name": "DIO_WRITE_PORT_SID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@2743@macro@DioConf_LCD_GRP_OFFSET",
+    "ID": "c:Dio.h@2947@macro@DIO_READ_CHANNEL_GROUP_SID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_LCD_GRP_OFFSET",
-    "location": {
-      "column": "9",
-      "line": "77",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_LCD_GRP_OFFSET",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@2896@macro@DioConf_LCD_PORT_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_LCD_PORT_NUM",
-    "location": {
-      "column": "9",
-      "line": "88",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_LCD_PORT_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@2942@macro@DioConf_LCD_RS_CHANNEL_ID_INDEX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_LCD_RS_CHANNEL_ID_INDEX",
+    "display": "DIO_READ_CHANNEL_GROUP_SID",
     "location": {
       "column": "9",
       "line": "90",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_LCD_RS_CHANNEL_ID_INDEX",
+    "name": "DIO_READ_CHANNEL_GROUP_SID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@2994@macro@DioConf_LCD_RW_CHANNEL_ID_INDEX",
+    "ID": "c:Dio.h@3049@macro@DIO_WRITE_CHANNEL_GROUP_SID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_LCD_RW_CHANNEL_ID_INDEX",
+    "display": "DIO_WRITE_CHANNEL_GROUP_SID",
     "location": {
       "column": "9",
-      "line": "91",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "93",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_LCD_RW_CHANNEL_ID_INDEX",
+    "name": "DIO_WRITE_CHANNEL_GROUP_SID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@3046@macro@DioConf_LCD_EN_CHANNEL_ID_INDEX",
+    "ID": "c:Dio.h@3146@macro@DIO_GET_VERSION_INFO_SID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_LCD_EN_CHANNEL_ID_INDEX",
-    "location": {
-      "column": "9",
-      "line": "92",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_LCD_EN_CHANNEL_ID_INDEX",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@3100@macro@DioConf_LCD_RS_PORT_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_LCD_RS_PORT_NUM",
-    "location": {
-      "column": "9",
-      "line": "94",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_LCD_RS_PORT_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@3149@macro@DioConf_LCD_RW_PORT_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_LCD_RW_PORT_NUM",
-    "location": {
-      "column": "9",
-      "line": "95",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_LCD_RW_PORT_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@3198@macro@DioConf_LCD_EN_PORT_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_LCD_EN_PORT_NUM",
+    "display": "DIO_GET_VERSION_INFO_SID",
     "location": {
       "column": "9",
       "line": "96",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_LCD_EN_PORT_NUM",
+    "name": "DIO_GET_VERSION_INFO_SID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@3249@macro@DioConf_LCD_RS_CHANNEL_NUM",
+    "ID": "c:Dio.h@3241@macro@DIO_INIT_SID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_LCD_RS_CHANNEL_NUM",
-    "location": {
-      "column": "9",
-      "line": "98",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_LCD_RS_CHANNEL_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@3296@macro@DioConf_LCD_RW_CHANNEL_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_LCD_RW_CHANNEL_NUM",
+    "display": "DIO_INIT_SID",
     "location": {
       "column": "9",
       "line": "99",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_LCD_RW_CHANNEL_NUM",
+    "name": "DIO_INIT_SID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@3343@macro@DioConf_LCD_EN_CHANNEL_NUM",
+    "ID": "c:Dio.h@3336@macro@DIO_FLIP_CHANNEL_SID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_LCD_EN_CHANNEL_NUM",
+    "display": "DIO_FLIP_CHANNEL_SID",
     "location": {
       "column": "9",
-      "line": "100",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "102",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_LCD_EN_CHANNEL_NUM",
+    "name": "DIO_FLIP_CHANNEL_SID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@3416@macro@DioConf_SPI_SS_CHANNEL_ID_INDEX",
+    "ID": "c:Dio.h@3681@macro@DIO_E_PARAM_INVALID_CHANNEL_ID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_SPI_SS_CHANNEL_ID_INDEX",
+    "display": "DIO_E_PARAM_INVALID_CHANNEL_ID",
     "location": {
       "column": "9",
-      "line": "103",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "108",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_SPI_SS_CHANNEL_ID_INDEX",
+    "name": "DIO_E_PARAM_INVALID_CHANNEL_ID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@3468@macro@DioConf_SPI_SS_PORT_NUM",
+    "ID": "c:Dio.h@3800@macro@DIO_E_PARAM_CONFIG",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_SPI_SS_PORT_NUM",
-    "location": {
-      "column": "9",
-      "line": "104",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_SPI_SS_PORT_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@3517@macro@DioConf_SPI_SS_CHANNEL_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_SPI_SS_CHANNEL_NUM",
-    "location": {
-      "column": "9",
-      "line": "105",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_SPI_SS_CHANNEL_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@3582@macro@DioConf_KEYPAD_BASE_CHANNEL_ID_INDEX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_KEYPAD_BASE_CHANNEL_ID_INDEX",
-    "location": {
-      "column": "9",
-      "line": "109",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_KEYPAD_BASE_CHANNEL_ID_INDEX",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@3630@macro@DioConf_KEPAD_ROW0_PORT_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_KEPAD_ROW0_PORT_NUM",
-    "location": {
-      "column": "9",
-      "line": "110",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_KEPAD_ROW0_PORT_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@3697@macro@DioConf_KEPAD_ROW1_PORT_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_KEPAD_ROW1_PORT_NUM",
+    "display": "DIO_E_PARAM_CONFIG",
     "location": {
       "column": "9",
       "line": "111",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_KEPAD_ROW1_PORT_NUM",
+    "name": "DIO_E_PARAM_CONFIG",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@3764@macro@DioConf_KEPAD_ROW2_PORT_NUM",
+    "ID": "c:Dio.h@3895@macro@DIO_E_PARAM_INVALID_PORT_ID",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_KEPAD_ROW2_PORT_NUM",
-    "location": {
-      "column": "9",
-      "line": "112",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_KEPAD_ROW2_PORT_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@3831@macro@DioConf_KEPAD_ROW3_PORT_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_KEPAD_ROW3_PORT_NUM",
-    "location": {
-      "column": "9",
-      "line": "113",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_KEPAD_ROW3_PORT_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@3898@macro@DioConf_KEPAD_COL0_PORT_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_KEPAD_COL0_PORT_NUM",
+    "display": "DIO_E_PARAM_INVALID_PORT_ID",
     "location": {
       "column": "9",
       "line": "114",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_KEPAD_COL0_PORT_NUM",
+    "name": "DIO_E_PARAM_INVALID_PORT_ID",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@3965@macro@DioConf_KEPAD_COL1_PORT_NUM",
+    "ID": "c:Dio.h@3999@macro@DIO_E_PARAM_INVALID_GROUP",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_KEPAD_COL1_PORT_NUM",
-    "location": {
-      "column": "9",
-      "line": "115",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_KEPAD_COL1_PORT_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@4032@macro@DioConf_KEPAD_COL2_PORT_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_KEPAD_COL2_PORT_NUM",
-    "location": {
-      "column": "9",
-      "line": "116",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_KEPAD_COL2_PORT_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@4099@macro@DioConf_KEPAD_COL3_PORT_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_KEPAD_COL3_PORT_NUM",
+    "display": "DIO_E_PARAM_INVALID_GROUP",
     "location": {
       "column": "9",
       "line": "117",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_KEPAD_COL3_PORT_NUM",
+    "name": "DIO_E_PARAM_INVALID_GROUP",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@4168@macro@DioConf_KEYPAD_ROW0_CHANNEL_NUM",
+    "ID": "c:Dio.h@4182@macro@DIO_E_PARAM_POINTER",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_KEYPAD_ROW0_CHANNEL_NUM",
-    "location": {
-      "column": "9",
-      "line": "119",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_KEYPAD_ROW0_CHANNEL_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@4221@macro@DioConf_KEYPAD_ROW1_CHANNEL_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_KEYPAD_ROW1_CHANNEL_NUM",
-    "location": {
-      "column": "9",
-      "line": "120",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_KEYPAD_ROW1_CHANNEL_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@4274@macro@DioConf_KEYPAD_ROW2_CHANNEL_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_KEYPAD_ROW2_CHANNEL_NUM",
-    "location": {
-      "column": "9",
-      "line": "121",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_KEYPAD_ROW2_CHANNEL_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@4327@macro@DioConf_KEYPAD_ROW3_CHANNEL_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_KEYPAD_ROW3_CHANNEL_NUM",
-    "location": {
-      "column": "9",
-      "line": "122",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
-    },
-    "name": "DioConf_KEYPAD_ROW3_CHANNEL_NUM",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio_Cfg.h@4380@macro@DioConf_KEYPAD_COL0_CHANNEL_NUM",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DioConf_KEYPAD_COL0_CHANNEL_NUM",
+    "display": "DIO_E_PARAM_POINTER",
     "location": {
       "column": "9",
       "line": "123",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_KEYPAD_COL0_CHANNEL_NUM",
+    "name": "DIO_E_PARAM_POINTER",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@4433@macro@DioConf_KEYPAD_COL1_CHANNEL_NUM",
+    "ID": "c:Dio.h@4393@macro@DIO_E_UNINIT",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "DioConf_KEYPAD_COL1_CHANNEL_NUM",
+    "display": "DIO_E_UNINIT",
     "location": {
       "column": "9",
-      "line": "124",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "129",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_KEYPAD_COL1_CHANNEL_NUM",
+    "name": "DIO_E_UNINIT",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@4486@macro@DioConf_KEYPAD_COL2_CHANNEL_NUM",
-    "What": "MacroDef",
+    "ID": "c:Dio.h@T@Dio_ChannelType",
+    "What": "Typedef",
     "defdec": "Def",
-    "display": "DioConf_KEYPAD_COL2_CHANNEL_NUM",
+    "display": "uint8",
     "location": {
-      "column": "9",
-      "line": "125",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "column": "15",
+      "line": "135",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_KEYPAD_COL2_CHANNEL_NUM",
+    "name": "Dio_ChannelType",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:Dio_Cfg.h@4539@macro@DioConf_KEYPAD_COL3_CHANNEL_NUM",
-    "What": "MacroDef",
+    "ID": "c:Dio.h@T@Dio_PortType",
+    "What": "Typedef",
     "defdec": "Def",
-    "display": "DioConf_KEYPAD_COL3_CHANNEL_NUM",
+    "display": "uint8",
+    "location": {
+      "column": "15",
+      "line": "138",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_PortType",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio.h@T@Dio_LevelType",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "uint8",
+    "location": {
+      "column": "15",
+      "line": "141",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_LevelType",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio.h@T@Dio_PortLevelType",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "uint8",
+    "location": {
+      "column": "15",
+      "line": "144",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_PortLevelType",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@SA@Dio_ChannelGroupType",
+    "What": "Struct",
+    "defdec": "Def",
+    "display": "",
     "location": {
       "column": "9",
-      "line": "126",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+      "line": "147",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
     },
-    "name": "DioConf_KEYPAD_COL3_CHANNEL_NUM",
+    "members": [
+      {
+        "ID": "c:@SA@Dio_ChannelGroupType@FI@mask",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "mask",
+        "location": {
+          "column": "9",
+          "line": "150",
+          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+        },
+        "name": "mask",
+        "origin": "user_include",
+        "scope": "_anonymous_Dio_h_147_9"
+      },
+      {
+        "ID": "c:@SA@Dio_ChannelGroupType@FI@offset",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "offset",
+        "location": {
+          "column": "9",
+          "line": "152",
+          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+        },
+        "name": "offset",
+        "origin": "user_include",
+        "scope": "_anonymous_Dio_h_147_9"
+      },
+      {
+        "ID": "c:@SA@Dio_ChannelGroupType@FI@PortIndex",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "PortIndex",
+        "location": {
+          "column": "16",
+          "line": "154",
+          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+        },
+        "name": "PortIndex",
+        "origin": "user_include",
+        "scope": "_anonymous_Dio_h_147_9"
+      }
+    ],
+    "name": "",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@T@Dio_ChannelGroupType",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "struct Dio_ChannelGroupType",
+    "location": {
+      "column": "3",
+      "line": "155",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_ChannelGroupType",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@SA@Dio_ConfigChannel",
+    "What": "Struct",
+    "defdec": "Def",
+    "display": "",
+    "location": {
+      "column": "9",
+      "line": "157",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "members": [
+      {
+        "ID": "c:@SA@Dio_ConfigChannel@FI@Port_Num",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "Port_Num",
+        "location": {
+          "column": "15",
+          "line": "160",
+          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+        },
+        "name": "Port_Num",
+        "origin": "user_include",
+        "scope": "_anonymous_Dio_h_157_9"
+      },
+      {
+        "ID": "c:@SA@Dio_ConfigChannel@FI@Ch_Num",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "Ch_Num",
+        "location": {
+          "column": "18",
+          "line": "162",
+          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+        },
+        "name": "Ch_Num",
+        "origin": "user_include",
+        "scope": "_anonymous_Dio_h_157_9"
+      },
+      {
+        "ID": "c:@T@Dio_ConfigChannel",
+        "What": "TypedefDecl",
+        "defdec": "Def",
+        "display": "struct Dio_ConfigChannel",
+        "location": {
+          "column": "2",
+          "line": "163",
+          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+        },
+        "name": "Dio_ConfigChannel",
+        "origin": "user_include",
+        "scope": "_anonymous_Dio_h_157_9"
+      }
+    ],
+    "name": "",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@S@Dio_ConfigType",
+    "What": "Struct",
+    "defdec": "Def",
+    "display": "Dio_ConfigType",
+    "location": {
+      "column": "16",
+      "line": "166",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "members": [
+      {
+        "ID": "c:@S@Dio_ConfigType@FI@Channels",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "Channels",
+        "location": {
+          "column": "20",
+          "line": "168",
+          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+        },
+        "name": "Channels",
+        "origin": "user_include",
+        "scope": "Dio_ConfigType"
+      },
+      {
+        "ID": "c:@S@Dio_ConfigType@FI@GroupChannels",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "GroupChannels",
+        "location": {
+          "column": "23",
+          "line": "170",
+          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+        },
+        "name": "GroupChannels",
+        "origin": "user_include",
+        "scope": "Dio_ConfigType"
+      }
+    ],
+    "name": "Dio_ConfigType",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio.h@T@Dio_ConfigType",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "struct Dio_ConfigType",
+    "location": {
+      "column": "3",
+      "line": "172",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_ConfigType",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_ReadPort",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "Dio_PortLevelType Dio_ReadPort(Dio_PortType)",
+    "location": {
+      "column": "19",
+      "line": "179",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_ReadPort",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_WritePort",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Dio_WritePort(Dio_PortType, Dio_PortLevelType)",
+    "location": {
+      "column": "6",
+      "line": "182",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_WritePort",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_WritePort",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Dio_WritePort(Dio_PortType, Dio_PortLevelType)",
+    "location": {
+      "column": "6",
+      "line": "182",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_WritePort",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_ReadChannel",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "Dio_LevelType Dio_ReadChannel(Dio_ChannelType)",
+    "location": {
+      "column": "15",
+      "line": "185",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_ReadChannel",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_ReadChannel",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "Dio_LevelType Dio_ReadChannel(Dio_ChannelType)",
+    "location": {
+      "column": "15",
+      "line": "185",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_ReadChannel",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_WriteChannel",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Dio_WriteChannel(Dio_ChannelType, Dio_LevelType)",
+    "location": {
+      "column": "6",
+      "line": "188",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_WriteChannel",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_WriteChannel",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Dio_WriteChannel(Dio_ChannelType, Dio_LevelType)",
+    "location": {
+      "column": "6",
+      "line": "188",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_WriteChannel",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_Init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Dio_Init(const Dio_ConfigType *)",
+    "location": {
+      "column": "6",
+      "line": "191",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_Init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_Init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Dio_Init(const Dio_ConfigType *)",
+    "location": {
+      "column": "6",
+      "line": "191",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_Init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_FlipChannel",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "Dio_LevelType Dio_FlipChannel(Dio_ChannelType)",
+    "location": {
+      "column": "15",
+      "line": "195",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_FlipChannel",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_FlipChannel",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "Dio_LevelType Dio_FlipChannel(Dio_ChannelType)",
+    "location": {
+      "column": "15",
+      "line": "195",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_FlipChannel",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_ReadChannelGroup",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "Dio_PortLevelType Dio_ReadChannelGroup(const Dio_ChannelGroupType *)",
+    "location": {
+      "column": "19",
+      "line": "204",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_ReadChannelGroup",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_ReadChannelGroup",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "Dio_PortLevelType Dio_ReadChannelGroup(const Dio_ChannelGroupType *)",
+    "location": {
+      "column": "19",
+      "line": "204",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_ReadChannelGroup",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_WriteChannelGroup",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Dio_WriteChannelGroup(const Dio_ChannelGroupType *, Dio_PortLevelType)",
+    "location": {
+      "column": "6",
+      "line": "207",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_WriteChannelGroup",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Dio_WriteChannelGroup",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Dio_WriteChannelGroup(const Dio_ChannelGroupType *, Dio_PortLevelType)",
+    "location": {
+      "column": "6",
+      "line": "207",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_WriteChannelGroup",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@Dio_Configuration",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Dio_Configuration",
+    "location": {
+      "column": "29",
+      "line": "215",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_Configuration",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@Dio_Configuration",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Dio_Configuration",
+    "location": {
+      "column": "29",
+      "line": "215",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
+    },
+    "name": "Dio_Configuration",
     "origin": "user_include",
     "scope": null
   },
@@ -1546,7 +1748,7 @@
     "display": "void Drivers_Init(void)",
     "location": {
       "column": "6",
-      "line": "124",
+      "line": "125",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "Drivers_Init",
@@ -1560,7 +1762,7 @@
     "display": "void getPassword(void)",
     "location": {
       "column": "6",
-      "line": "134",
+      "line": "135",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "getPassword",
@@ -1568,13 +1770,13 @@
     "scope": null
   },
   {
-    "ID": "c:HMI_ECU.c@4747@F@getPassword@passCode",
+    "ID": "c:HMI_ECU.c@4810@F@getPassword@passCode",
     "What": "Variable",
     "defdec": "Def",
     "display": "passCode",
     "location": {
       "column": "11",
-      "line": "136",
+      "line": "137",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "passCode",
@@ -1582,13 +1784,13 @@
     "scope": null
   },
   {
-    "ID": "c:HMI_ECU.c@4849@F@getPassword@passCodeCounter",
+    "ID": "c:HMI_ECU.c@4912@F@getPassword@passCodeCounter",
     "What": "Variable",
     "defdec": "Def",
     "display": "passCodeCounter",
     "location": {
       "column": "11",
-      "line": "138",
+      "line": "139",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "passCodeCounter",
@@ -1596,13 +1798,13 @@
     "scope": null
   },
   {
-    "ID": "c:HMI_ECU.c@4927@F@getPassword@pressedKey",
+    "ID": "c:HMI_ECU.c@4990@F@getPassword@pressedKey",
     "What": "Variable",
     "defdec": "Def",
     "display": "pressedKey",
     "location": {
       "column": "11",
-      "line": "140",
+      "line": "141",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "pressedKey",
@@ -1616,7 +1818,7 @@
     "display": "void getRfidTag(void)",
     "location": {
       "column": "6",
-      "line": "162",
+      "line": "163",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "getRfidTag",
@@ -1624,13 +1826,13 @@
     "scope": null
   },
   {
-    "ID": "c:HMI_ECU.c@6018@F@getRfidTag@rfidTag",
+    "ID": "c:HMI_ECU.c@6081@F@getRfidTag@rfidTag",
     "What": "Variable",
     "defdec": "Def",
     "display": "rfidTag",
     "location": {
       "column": "11",
-      "line": "164",
+      "line": "165",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "rfidTag",
@@ -1638,13 +1840,13 @@
     "scope": null
   },
   {
-    "ID": "c:HMI_ECU.c@6119@F@getRfidTag@uidCounter",
+    "ID": "c:HMI_ECU.c@6182@F@getRfidTag@uidCounter",
     "What": "Variable",
     "defdec": "Def",
     "display": "uidCounter",
     "location": {
       "column": "11",
-      "line": "166",
+      "line": "167",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "uidCounter",
@@ -1658,7 +1860,7 @@
     "display": "void rfidReadTag(uint8 *)",
     "location": {
       "column": "6",
-      "line": "177",
+      "line": "178",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "rfidReadTag",
@@ -1666,13 +1868,13 @@
     "scope": null
   },
   {
-    "ID": "c:HMI_ECU.c@6521@F@rfidReadTag@byte",
+    "ID": "c:HMI_ECU.c@6584@F@rfidReadTag@byte",
     "What": "Variable",
     "defdec": "Def",
     "display": "byte",
     "location": {
       "column": "11",
-      "line": "178",
+      "line": "179",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "byte",
@@ -1686,7 +1888,7 @@
     "display": "void getOption(void)",
     "location": {
       "column": "6",
-      "line": "207",
+      "line": "208",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "getOption",
@@ -1694,13 +1896,13 @@
     "scope": null
   },
   {
-    "ID": "c:HMI_ECU.c@7357@F@getOption@option",
+    "ID": "c:HMI_ECU.c@7420@F@getOption@option",
     "What": "Variable",
     "defdec": "Def",
     "display": "option",
     "location": {
       "column": "11",
-      "line": "209",
+      "line": "210",
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\HMI_ECU.c"
     },
     "name": "option",
@@ -4218,7 +4420,7 @@
     "scope": null
   },
   {
-    "ID": "c:Std_Types.h@807@macro@STD_TYPES_AR_RELEASE_MAJOR_VERSION",
+    "ID": "c:std_types.h@807@macro@STD_TYPES_AR_RELEASE_MAJOR_VERSION",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "STD_TYPES_AR_RELEASE_MAJOR_VERSION",
@@ -4232,7 +4434,7 @@
     "scope": null
   },
   {
-    "ID": "c:std_types.h@807@macro@STD_TYPES_AR_RELEASE_MAJOR_VERSION",
+    "ID": "c:Std_Types.h@807@macro@STD_TYPES_AR_RELEASE_MAJOR_VERSION",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "STD_TYPES_AR_RELEASE_MAJOR_VERSION",
@@ -4274,7 +4476,7 @@
     "scope": null
   },
   {
-    "ID": "c:std_types.h@941@macro@STD_TYPES_AR_RELEASE_PATCH_VERSION",
+    "ID": "c:Std_Types.h@941@macro@STD_TYPES_AR_RELEASE_PATCH_VERSION",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "STD_TYPES_AR_RELEASE_PATCH_VERSION",
@@ -4288,7 +4490,7 @@
     "scope": null
   },
   {
-    "ID": "c:Std_Types.h@941@macro@STD_TYPES_AR_RELEASE_PATCH_VERSION",
+    "ID": "c:std_types.h@941@macro@STD_TYPES_AR_RELEASE_PATCH_VERSION",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "STD_TYPES_AR_RELEASE_PATCH_VERSION",
@@ -4430,20 +4632,6 @@
     "scope": null
   },
   {
-    "ID": "c:std_types.h@1411@macro@STD_HIGH",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "STD_HIGH",
-    "location": {
-      "column": "9",
-      "line": "54",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Std_Types.h"
-    },
-    "name": "STD_HIGH",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:Std_Types.h@1411@macro@STD_HIGH",
     "What": "MacroDef",
     "defdec": "Def",
@@ -4458,7 +4646,21 @@
     "scope": null
   },
   {
-    "ID": "c:std_types.h@1470@macro@STD_LOW",
+    "ID": "c:std_types.h@1411@macro@STD_HIGH",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "STD_HIGH",
+    "location": {
+      "column": "9",
+      "line": "54",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Std_Types.h"
+    },
+    "name": "STD_HIGH",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Std_Types.h@1470@macro@STD_LOW",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "STD_LOW",
@@ -4472,7 +4674,7 @@
     "scope": null
   },
   {
-    "ID": "c:Std_Types.h@1470@macro@STD_LOW",
+    "ID": "c:std_types.h@1470@macro@STD_LOW",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "STD_LOW",
@@ -4650,866 +4852,6 @@
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Std_Types.h"
     },
     "name": "E_NOT_OK",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@347@macro@DIO_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_H",
-    "location": {
-      "column": "9",
-      "line": "13",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_H",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@405@macro@DIO_VENDOR_ID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_VENDOR_ID",
-    "location": {
-      "column": "9",
-      "line": "16",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_VENDOR_ID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@462@macro@DIO_MODULE_ID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_MODULE_ID",
-    "location": {
-      "column": "9",
-      "line": "19",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_MODULE_ID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@520@macro@DIO_INSTANCE_ID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_INSTANCE_ID",
-    "location": {
-      "column": "9",
-      "line": "22",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_INSTANCE_ID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@587@macro@DIO_SW_MAJOR_VERSION",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_SW_MAJOR_VERSION",
-    "location": {
-      "column": "9",
-      "line": "27",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_SW_MAJOR_VERSION",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@632@macro@DIO_SW_MINOR_VERSION",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_SW_MINOR_VERSION",
-    "location": {
-      "column": "9",
-      "line": "28",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_SW_MINOR_VERSION",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@677@macro@DIO_SW_PATCH_VERSION",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_SW_PATCH_VERSION",
-    "location": {
-      "column": "9",
-      "line": "29",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_SW_PATCH_VERSION",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@759@macro@DIO_AR_RELEASE_MAJOR_VERSION",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_AR_RELEASE_MAJOR_VERSION",
-    "location": {
-      "column": "9",
-      "line": "34",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_AR_RELEASE_MAJOR_VERSION",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@804@macro@DIO_AR_RELEASE_MINOR_VERSION",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_AR_RELEASE_MINOR_VERSION",
-    "location": {
-      "column": "9",
-      "line": "35",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_AR_RELEASE_MINOR_VERSION",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@849@macro@DIO_AR_RELEASE_PATCH_VERSION",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_AR_RELEASE_PATCH_VERSION",
-    "location": {
-      "column": "9",
-      "line": "36",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_AR_RELEASE_PATCH_VERSION",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@931@macro@DIO_INITIALIZED",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_INITIALIZED",
-    "location": {
-      "column": "9",
-      "line": "41",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_INITIALIZED",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@976@macro@DIO_NOT_INITIALIZED",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_NOT_INITIALIZED",
-    "location": {
-      "column": "9",
-      "line": "42",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_NOT_INITIALIZED",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@2565@macro@DIO_READ_CHANNEL_SID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_READ_CHANNEL_SID",
-    "location": {
-      "column": "9",
-      "line": "78",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_READ_CHANNEL_SID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@2661@macro@DIO_WRITE_CHANNEL_SID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_WRITE_CHANNEL_SID",
-    "location": {
-      "column": "9",
-      "line": "81",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_WRITE_CHANNEL_SID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@2753@macro@DIO_READ_PORT_SID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_READ_PORT_SID",
-    "location": {
-      "column": "9",
-      "line": "84",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_READ_PORT_SID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@2846@macro@DIO_WRITE_PORT_SID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_WRITE_PORT_SID",
-    "location": {
-      "column": "9",
-      "line": "87",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_WRITE_PORT_SID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@2947@macro@DIO_READ_CHANNEL_GROUP_SID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_READ_CHANNEL_GROUP_SID",
-    "location": {
-      "column": "9",
-      "line": "90",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_READ_CHANNEL_GROUP_SID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@3049@macro@DIO_WRITE_CHANNEL_GROUP_SID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_WRITE_CHANNEL_GROUP_SID",
-    "location": {
-      "column": "9",
-      "line": "93",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_WRITE_CHANNEL_GROUP_SID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@3146@macro@DIO_GET_VERSION_INFO_SID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_GET_VERSION_INFO_SID",
-    "location": {
-      "column": "9",
-      "line": "96",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_GET_VERSION_INFO_SID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@3241@macro@DIO_INIT_SID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_INIT_SID",
-    "location": {
-      "column": "9",
-      "line": "99",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_INIT_SID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@3336@macro@DIO_FLIP_CHANNEL_SID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_FLIP_CHANNEL_SID",
-    "location": {
-      "column": "9",
-      "line": "102",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_FLIP_CHANNEL_SID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@3681@macro@DIO_E_PARAM_INVALID_CHANNEL_ID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_E_PARAM_INVALID_CHANNEL_ID",
-    "location": {
-      "column": "9",
-      "line": "108",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_E_PARAM_INVALID_CHANNEL_ID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@3800@macro@DIO_E_PARAM_CONFIG",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_E_PARAM_CONFIG",
-    "location": {
-      "column": "9",
-      "line": "111",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_E_PARAM_CONFIG",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@3895@macro@DIO_E_PARAM_INVALID_PORT_ID",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_E_PARAM_INVALID_PORT_ID",
-    "location": {
-      "column": "9",
-      "line": "114",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_E_PARAM_INVALID_PORT_ID",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@3999@macro@DIO_E_PARAM_INVALID_GROUP",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_E_PARAM_INVALID_GROUP",
-    "location": {
-      "column": "9",
-      "line": "117",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_E_PARAM_INVALID_GROUP",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@4182@macro@DIO_E_PARAM_POINTER",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_E_PARAM_POINTER",
-    "location": {
-      "column": "9",
-      "line": "123",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_E_PARAM_POINTER",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@4393@macro@DIO_E_UNINIT",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "DIO_E_UNINIT",
-    "location": {
-      "column": "9",
-      "line": "129",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "DIO_E_UNINIT",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@T@Dio_ChannelType",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "uint8",
-    "location": {
-      "column": "15",
-      "line": "135",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_ChannelType",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@T@Dio_PortType",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "uint8",
-    "location": {
-      "column": "15",
-      "line": "138",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_PortType",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@T@Dio_LevelType",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "uint8",
-    "location": {
-      "column": "15",
-      "line": "141",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_LevelType",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@T@Dio_PortLevelType",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "uint8",
-    "location": {
-      "column": "15",
-      "line": "144",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_PortLevelType",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@SA@Dio_ChannelGroupType",
-    "What": "Struct",
-    "defdec": "Def",
-    "display": "",
-    "location": {
-      "column": "9",
-      "line": "147",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "members": [
-      {
-        "ID": "c:@SA@Dio_ChannelGroupType@FI@mask",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "mask",
-        "location": {
-          "column": "9",
-          "line": "150",
-          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-        },
-        "name": "mask",
-        "origin": "user_include",
-        "scope": "_anonymous_Dio_h_147_9"
-      },
-      {
-        "ID": "c:@SA@Dio_ChannelGroupType@FI@offset",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "offset",
-        "location": {
-          "column": "9",
-          "line": "152",
-          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-        },
-        "name": "offset",
-        "origin": "user_include",
-        "scope": "_anonymous_Dio_h_147_9"
-      },
-      {
-        "ID": "c:@SA@Dio_ChannelGroupType@FI@PortIndex",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "PortIndex",
-        "location": {
-          "column": "16",
-          "line": "154",
-          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-        },
-        "name": "PortIndex",
-        "origin": "user_include",
-        "scope": "_anonymous_Dio_h_147_9"
-      }
-    ],
-    "name": "",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@T@Dio_ChannelGroupType",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "struct Dio_ChannelGroupType",
-    "location": {
-      "column": "3",
-      "line": "155",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_ChannelGroupType",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@SA@Dio_ConfigChannel",
-    "What": "Struct",
-    "defdec": "Def",
-    "display": "",
-    "location": {
-      "column": "9",
-      "line": "157",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "members": [
-      {
-        "ID": "c:@SA@Dio_ConfigChannel@FI@Port_Num",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "Port_Num",
-        "location": {
-          "column": "15",
-          "line": "160",
-          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-        },
-        "name": "Port_Num",
-        "origin": "user_include",
-        "scope": "_anonymous_Dio_h_157_9"
-      },
-      {
-        "ID": "c:@SA@Dio_ConfigChannel@FI@Ch_Num",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "Ch_Num",
-        "location": {
-          "column": "18",
-          "line": "162",
-          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-        },
-        "name": "Ch_Num",
-        "origin": "user_include",
-        "scope": "_anonymous_Dio_h_157_9"
-      },
-      {
-        "ID": "c:@T@Dio_ConfigChannel",
-        "What": "TypedefDecl",
-        "defdec": "Def",
-        "display": "struct Dio_ConfigChannel",
-        "location": {
-          "column": "2",
-          "line": "163",
-          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-        },
-        "name": "Dio_ConfigChannel",
-        "origin": "user_include",
-        "scope": "_anonymous_Dio_h_157_9"
-      }
-    ],
-    "name": "",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@S@Dio_ConfigType",
-    "What": "Struct",
-    "defdec": "Def",
-    "display": "Dio_ConfigType",
-    "location": {
-      "column": "16",
-      "line": "166",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "members": [
-      {
-        "ID": "c:@S@Dio_ConfigType@FI@Channels",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "Channels",
-        "location": {
-          "column": "20",
-          "line": "168",
-          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-        },
-        "name": "Channels",
-        "origin": "user_include",
-        "scope": "Dio_ConfigType"
-      },
-      {
-        "ID": "c:@S@Dio_ConfigType@FI@GroupChannels",
-        "What": "FieldDecl",
-        "defdec": "Def",
-        "display": "GroupChannels",
-        "location": {
-          "column": "23",
-          "line": "170",
-          "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-        },
-        "name": "GroupChannels",
-        "origin": "user_include",
-        "scope": "Dio_ConfigType"
-      }
-    ],
-    "name": "Dio_ConfigType",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:Dio.h@T@Dio_ConfigType",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "struct Dio_ConfigType",
-    "location": {
-      "column": "3",
-      "line": "172",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_ConfigType",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_ReadPort",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "Dio_PortLevelType Dio_ReadPort(Dio_PortType)",
-    "location": {
-      "column": "19",
-      "line": "179",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_ReadPort",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_WritePort",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Dio_WritePort(Dio_PortType, Dio_PortLevelType)",
-    "location": {
-      "column": "6",
-      "line": "182",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_WritePort",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_WritePort",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Dio_WritePort(Dio_PortType, Dio_PortLevelType)",
-    "location": {
-      "column": "6",
-      "line": "182",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_WritePort",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_ReadChannel",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "Dio_LevelType Dio_ReadChannel(Dio_ChannelType)",
-    "location": {
-      "column": "15",
-      "line": "185",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_ReadChannel",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_ReadChannel",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "Dio_LevelType Dio_ReadChannel(Dio_ChannelType)",
-    "location": {
-      "column": "15",
-      "line": "185",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_ReadChannel",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_WriteChannel",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Dio_WriteChannel(Dio_ChannelType, Dio_LevelType)",
-    "location": {
-      "column": "6",
-      "line": "188",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_WriteChannel",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_WriteChannel",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Dio_WriteChannel(Dio_ChannelType, Dio_LevelType)",
-    "location": {
-      "column": "6",
-      "line": "188",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_WriteChannel",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_Init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Dio_Init(const Dio_ConfigType *)",
-    "location": {
-      "column": "6",
-      "line": "191",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_Init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_Init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Dio_Init(const Dio_ConfigType *)",
-    "location": {
-      "column": "6",
-      "line": "191",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_Init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_FlipChannel",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "Dio_LevelType Dio_FlipChannel(Dio_ChannelType)",
-    "location": {
-      "column": "15",
-      "line": "195",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_FlipChannel",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_FlipChannel",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "Dio_LevelType Dio_FlipChannel(Dio_ChannelType)",
-    "location": {
-      "column": "15",
-      "line": "195",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_FlipChannel",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_ReadChannelGroup",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "Dio_PortLevelType Dio_ReadChannelGroup(const Dio_ChannelGroupType *)",
-    "location": {
-      "column": "19",
-      "line": "204",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_ReadChannelGroup",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_ReadChannelGroup",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "Dio_PortLevelType Dio_ReadChannelGroup(const Dio_ChannelGroupType *)",
-    "location": {
-      "column": "19",
-      "line": "204",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_ReadChannelGroup",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_WriteChannelGroup",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Dio_WriteChannelGroup(const Dio_ChannelGroupType *, Dio_PortLevelType)",
-    "location": {
-      "column": "6",
-      "line": "207",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_WriteChannelGroup",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Dio_WriteChannelGroup",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Dio_WriteChannelGroup(const Dio_ChannelGroupType *, Dio_PortLevelType)",
-    "location": {
-      "column": "6",
-      "line": "207",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_WriteChannelGroup",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@Dio_Configuration",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "Dio_Configuration",
-    "location": {
-      "column": "29",
-      "line": "215",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_Configuration",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@Dio_Configuration",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "Dio_Configuration",
-    "location": {
-      "column": "29",
-      "line": "215",
-      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio.h"
-    },
-    "name": "Dio_Configuration",
     "origin": "user_include",
     "scope": null
   },
@@ -10260,6 +9602,664 @@
       "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Det.h"
     },
     "name": "Det_ReportError",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@381@macro@DIO_CFG_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_CFG_H",
+    "location": {
+      "column": "9",
+      "line": "13",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_CFG_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@511@macro@DIO_CFG_SW_MAJOR_VERSION",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_CFG_SW_MAJOR_VERSION",
+    "location": {
+      "column": "9",
+      "line": "20",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_CFG_SW_MAJOR_VERSION",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@563@macro@DIO_CFG_SW_MINOR_VERSION",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_CFG_SW_MINOR_VERSION",
+    "location": {
+      "column": "9",
+      "line": "21",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_CFG_SW_MINOR_VERSION",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@615@macro@DIO_CFG_SW_PATCH_VERSION",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_CFG_SW_PATCH_VERSION",
+    "location": {
+      "column": "9",
+      "line": "22",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_CFG_SW_PATCH_VERSION",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@704@macro@DIO_CFG_AR_RELEASE_MAJOR_VERSION",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_CFG_AR_RELEASE_MAJOR_VERSION",
+    "location": {
+      "column": "9",
+      "line": "27",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_CFG_AR_RELEASE_MAJOR_VERSION",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@755@macro@DIO_CFG_AR_RELEASE_MINOR_VERSION",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_CFG_AR_RELEASE_MINOR_VERSION",
+    "location": {
+      "column": "9",
+      "line": "28",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_CFG_AR_RELEASE_MINOR_VERSION",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@806@macro@DIO_CFG_AR_RELEASE_PATCH_VERSION",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_CFG_AR_RELEASE_PATCH_VERSION",
+    "location": {
+      "column": "9",
+      "line": "29",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_CFG_AR_RELEASE_PATCH_VERSION",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@914@macro@DIO_DEV_ERROR_DETECT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_DEV_ERROR_DETECT",
+    "location": {
+      "column": "9",
+      "line": "32",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_DEV_ERROR_DETECT",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@1017@macro@DIO_VERSION_INFO_API",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_VERSION_INFO_API",
+    "location": {
+      "column": "9",
+      "line": "35",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_VERSION_INFO_API",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@1136@macro@DIO_FLIP_CHANNEL_API",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_FLIP_CHANNEL_API",
+    "location": {
+      "column": "9",
+      "line": "38",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_FLIP_CHANNEL_API",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@1302@macro@DIO_CONFIGURED_CHANNLES",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_CONFIGURED_CHANNLES",
+    "location": {
+      "column": "9",
+      "line": "43",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_CONFIGURED_CHANNLES",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@2111@macro@DIO_CONFIGURED_GROUP_CHANNELS",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DIO_CONFIGURED_GROUP_CHANNELS",
+    "location": {
+      "column": "9",
+      "line": "61",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DIO_CONFIGURED_GROUP_CHANNELS",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@2163@macro@DioConf_LCD_GRP_INDEX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_GRP_INDEX",
+    "location": {
+      "column": "9",
+      "line": "62",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_GRP_INDEX",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@2313@macro@DioConf_LCD_GRP_PTR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_GRP_PTR",
+    "location": {
+      "column": "9",
+      "line": "65",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_GRP_PTR",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@2471@macro@DioConf_LCD_GRP_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_GRP_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "69",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_GRP_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@2610@macro@DioConf_LCD_GRP_MASK",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_GRP_MASK",
+    "location": {
+      "column": "9",
+      "line": "74",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_GRP_MASK",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@2743@macro@DioConf_LCD_GRP_OFFSET",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_GRP_OFFSET",
+    "location": {
+      "column": "9",
+      "line": "77",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_GRP_OFFSET",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@2896@macro@DioConf_LCD_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "88",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@2942@macro@DioConf_LCD_RS_CHANNEL_ID_INDEX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_RS_CHANNEL_ID_INDEX",
+    "location": {
+      "column": "9",
+      "line": "90",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_RS_CHANNEL_ID_INDEX",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@2994@macro@DioConf_LCD_RW_CHANNEL_ID_INDEX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_RW_CHANNEL_ID_INDEX",
+    "location": {
+      "column": "9",
+      "line": "91",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_RW_CHANNEL_ID_INDEX",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3046@macro@DioConf_LCD_EN_CHANNEL_ID_INDEX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_EN_CHANNEL_ID_INDEX",
+    "location": {
+      "column": "9",
+      "line": "92",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_EN_CHANNEL_ID_INDEX",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3100@macro@DioConf_LCD_RS_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_RS_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "94",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_RS_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3149@macro@DioConf_LCD_RW_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_RW_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "95",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_RW_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3198@macro@DioConf_LCD_EN_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_EN_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "96",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_EN_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3249@macro@DioConf_LCD_RS_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_RS_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "98",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_RS_CHANNEL_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3296@macro@DioConf_LCD_RW_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_RW_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "99",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_RW_CHANNEL_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3343@macro@DioConf_LCD_EN_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_LCD_EN_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "100",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_LCD_EN_CHANNEL_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3416@macro@DioConf_SPI_SS_CHANNEL_ID_INDEX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_SPI_SS_CHANNEL_ID_INDEX",
+    "location": {
+      "column": "9",
+      "line": "103",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_SPI_SS_CHANNEL_ID_INDEX",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3468@macro@DioConf_SPI_SS_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_SPI_SS_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "104",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_SPI_SS_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3517@macro@DioConf_SPI_SS_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_SPI_SS_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "105",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_SPI_SS_CHANNEL_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3582@macro@DioConf_KEYPAD_BASE_CHANNEL_ID_INDEX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEYPAD_BASE_CHANNEL_ID_INDEX",
+    "location": {
+      "column": "9",
+      "line": "109",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEYPAD_BASE_CHANNEL_ID_INDEX",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3630@macro@DioConf_KEPAD_ROW0_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEPAD_ROW0_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "110",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEPAD_ROW0_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3697@macro@DioConf_KEPAD_ROW1_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEPAD_ROW1_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "111",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEPAD_ROW1_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3764@macro@DioConf_KEPAD_ROW2_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEPAD_ROW2_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "112",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEPAD_ROW2_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3831@macro@DioConf_KEPAD_ROW3_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEPAD_ROW3_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "113",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEPAD_ROW3_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3898@macro@DioConf_KEPAD_COL0_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEPAD_COL0_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "114",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEPAD_COL0_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@3965@macro@DioConf_KEPAD_COL1_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEPAD_COL1_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "115",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEPAD_COL1_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@4032@macro@DioConf_KEPAD_COL2_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEPAD_COL2_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "116",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEPAD_COL2_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@4099@macro@DioConf_KEPAD_COL3_PORT_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEPAD_COL3_PORT_NUM",
+    "location": {
+      "column": "9",
+      "line": "117",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEPAD_COL3_PORT_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@4168@macro@DioConf_KEYPAD_ROW0_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEYPAD_ROW0_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "119",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEYPAD_ROW0_CHANNEL_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@4221@macro@DioConf_KEYPAD_ROW1_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEYPAD_ROW1_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "120",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEYPAD_ROW1_CHANNEL_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@4274@macro@DioConf_KEYPAD_ROW2_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEYPAD_ROW2_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "121",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEYPAD_ROW2_CHANNEL_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@4327@macro@DioConf_KEYPAD_ROW3_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEYPAD_ROW3_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "122",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEYPAD_ROW3_CHANNEL_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@4380@macro@DioConf_KEYPAD_COL0_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEYPAD_COL0_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "123",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEYPAD_COL0_CHANNEL_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@4433@macro@DioConf_KEYPAD_COL1_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEYPAD_COL1_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "124",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEYPAD_COL1_CHANNEL_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@4486@macro@DioConf_KEYPAD_COL2_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEYPAD_COL2_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "125",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEYPAD_COL2_CHANNEL_NUM",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Dio_Cfg.h@4539@macro@DioConf_KEYPAD_COL3_CHANNEL_NUM",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "DioConf_KEYPAD_COL3_CHANNEL_NUM",
+    "location": {
+      "column": "9",
+      "line": "126",
+      "path": "D:\\Embedded_non-stop\\Graduation Project\\HMI_Block\\Dio_Cfg.h"
+    },
+    "name": "DioConf_KEYPAD_COL3_CHANNEL_NUM",
     "origin": "user_include",
     "scope": null
   },

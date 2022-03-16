@@ -55,6 +55,7 @@ int main(void)
             break;
         case GET_PASSWORD_CMD:
             LCD_displayString("Enter your password");
+            LCD_moveCursor(1, 7);
             getPassword();
             break;
         case WRONG_PASSWORD_CMD:
@@ -70,11 +71,11 @@ int main(void)
             getRfidTag();
             break;
         case GET_RFID_CMD:
-            LCD_displayString("Scan your tag");
+            LCD_displayStringRowColumn(0, 3,"Scan your tag");
             getRfidTag();
             break;
         case TAG_FAILED_CMD:
-            LCD_displayString("Tag Failed!");
+            LCD_displayStringRowColumn(0, 4,"Tag Failed!");
             Delay_ms(LCD_MESSAGE_DELAY);
             break;
         case LOOK_AT_CAMERA_CMD:
