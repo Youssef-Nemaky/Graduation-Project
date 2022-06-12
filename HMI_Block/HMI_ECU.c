@@ -139,6 +139,8 @@ void getPassword(void){
     uint8 passCodeCounter = 0;
     /* A variable to hold the pressed key */
     uint8 pressedKey = 0;
+    /* A variable to read the continue command */
+    uint8 continueCMD = 0;
 
     /* loop through the passcode array and save the input pressed key */
     for(passCodeCounter = 0; passCodeCounter < PASSCODE_LENGTH;){
@@ -157,6 +159,7 @@ void getPassword(void){
     /* Send the password to control block after reading it from the user */
     for(passCodeCounter = 0; passCodeCounter < PASSCODE_LENGTH; passCodeCounter++){
         Uart_SendByte(CONTROL_BLOCK_UART, passCode[passCodeCounter]);
+        continueCMD = Uart_ReceiveByte(CONTROL_BLOCK_UART);
     } /* end of for loop */
 } /* end of getPassword function */
 
@@ -165,6 +168,8 @@ void getRfidTag(void){
     uint8 rfidTag[RFID_UNIQUE_ID_LENGTH];
     /* A counter to loop through the array of the uid */
     uint8 uidCounter = 0;
+    /* A variable to read the continue command */
+    uint8 continueCMD = 0;
 
     /* Read the rfid tag */
     rfidReadTag(rfidTag);
@@ -172,6 +177,7 @@ void getRfidTag(void){
     /* Send the rfid tag to the control block after scanning it */
     for(uidCounter = 0; uidCounter < RFID_UNIQUE_ID_LENGTH; uidCounter++){
         Uart_SendByte(CONTROL_BLOCK_UART, rfidTag[uidCounter]);
+        continueCMD = Uart_ReceiveByte(CONTROL_BLOCK_UART);
     } /* end of for loop */
 } /* end of getRfidTag function */
 

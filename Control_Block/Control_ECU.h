@@ -35,7 +35,6 @@
 
 #define NUMBER_OF_ITERATIONS_PER_ONE_MILI_SECOND 762
 
-#define HMI_BLOCK_UART UART7_MODULE_NUMBER /* Add me to uart.h later*/
 #define LOCK_TIME 60000
 #define INCORRECT 0
 #define CORRECT 1
@@ -78,6 +77,7 @@
 #define RASP_AUTH_CMD 'n'
 #define RASP_AUTH_FAILURE_CMD 'f'
 #define RASP_SETUP_FAILED_ERROR 'R'
+#define CONTINUE_CMD 'C'
 /*******************************************************************************
  *                         		Types Declaration                              *
  *******************************************************************************/

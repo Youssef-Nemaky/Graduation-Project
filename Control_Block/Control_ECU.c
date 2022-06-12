@@ -120,11 +120,13 @@ void passwordSetup(void){
         /* Get the 1st password from HMI */
         for(uidCounter = 0; uidCounter < PASSWORD_LENGTH; uidCounter++){
             pass1[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
+            Uart_SendByte(HMI_BLOCK_UART, CONTINUE_CMD);
         }
 
         /* Get the 2nd password from HMI */
         for (uidCounter = 0; uidCounter < PASSWORD_LENGTH; uidCounter++) {
             pass2[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
+            Uart_SendByte(HMI_BLOCK_UART, CONTINUE_CMD);
         }
 
         /* Check if the two passwords match each other */
@@ -158,11 +160,13 @@ void rfidSetup(void){
     
     /* get the 1st rfid uid from HMI */
     for(uidCounter = 0; uidCounter < RFID_UNIQUE_ID_LENGTH; uidCounter++){
+        Uart_SendByte(HMI_BLOCK_UART, CONTINUE_CMD);
         rfidTag1[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
     }
 
     /* get the 2nd rfid uid from HMI */
     for (uidCounter = 0; uidCounter < RFID_UNIQUE_ID_LENGTH; uidCounter++) {
+        Uart_SendByte(HMI_BLOCK_UART, CONTINUE_CMD);
         rfidTag2[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
     }
 
@@ -229,6 +233,7 @@ uint8 passwordAuth(void){
         Uart_SendByte(HMI_BLOCK_UART, GET_PASSWORD_CMD);
         for (uidCounter = 0; uidCounter < PASSWORD_LENGTH; uidCounter++) {
             hmiPass[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
+            Uart_SendByte(HMI_BLOCK_UART, CONTINUE_CMD);
         }
 
         for (uidCounter = 0; uidCounter < PASSWORD_LENGTH; uidCounter++) {
@@ -268,6 +273,7 @@ uint8 rfidAuth(void){
 
         for (uidCounter = 0; uidCounter < RFID_UNIQUE_ID_LENGTH; uidCounter++) {
             hmiRfid[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
+            Uart_SendByte(HMI_BLOCK_UART, CONTINUE_CMD);
         }
 
         for (uidCounter = 0; uidCounter < RFID_UNIQUE_ID_LENGTH; uidCounter++) {
