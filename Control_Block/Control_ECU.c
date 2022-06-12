@@ -16,8 +16,6 @@
  *                                  Includes                                   *
  *******************************************************************************/
 #include "Control_ECU.h"
-
-
 /*******************************************************************************
  *                              Global Variables                               *
  *******************************************************************************/
@@ -30,7 +28,7 @@ uint8 g_numWrongAttempts = 0;
 
 uint8 g_first_time = 0;
 
-uint8 numOfUsedAuthMethods = 2;
+uint8 numOfUsedAuthMethods = 3;
 
 uint8 (*authArray[numOfAvAuthMethods])(void) = {passwordAuth, rfidAuth, faceAuth};
 
@@ -61,11 +59,11 @@ int main(void){
     Delay_ms(1000); /* give time for the HMI block to finish initialization */
 
     /* Read the EEPROM address for first time use */
-    EEPROM_readByte(FIRST_TIME_ADDRESS, &g_first_time);
+    //EEPROM_readByte(FIRST_TIME_ADDRESS, &g_first_time);
 
     EEPROM_readByte(WRONG_ATTEMPTS_ADDRESS, &g_numWrongAttempts);
 
-    if(g_first_time != 0x00){
+    if(g_first_time == 0x00){
         systemSetup();
     }
     while(1){
@@ -98,7 +96,7 @@ void systemSetup(void){
     Uart_SendByte(HMI_BLOCK_UART, FIRST_TIME_CMD);
     passwordSetup();
     rfidSetup();
-    //faceSetup();
+    faceSetup();
     
     /* Send setup complete command to HMI */
     Uart_SendByte(HMI_BLOCK_UART, SETUP_COMPLETE_CMD);

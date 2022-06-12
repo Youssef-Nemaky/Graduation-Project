@@ -76,7 +76,7 @@
 /* Raspberry Pi Commands */
 #define RASP_FIRST_TIME_CMD 'y'
 #define RASP_AUTH_CMD 'n'
-#define RASP_AUTH_FAILURE_CMD 'F'
+#define RASP_AUTH_FAILURE_CMD 'f'
 #define RASP_SETUP_FAILED_ERROR 'R'
 /*******************************************************************************
  *                         		Types Declaration                              *
