@@ -111,7 +111,7 @@ int main(void){
     uint8 option = 0;
     Drivers_Init();
     GPS_updateLocation();
-
+    
     /* Read the EEPROM address for first time use */
     //EEPROM_readByte(FIRST_TIME_ADDRESS, &g_first_time);
 
@@ -265,6 +265,9 @@ boolean systemAuth(void){
         if((*authArray[authCounter])() == FALSE){
             Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_LOW);
             Uart_SendByte(HMI_BLOCK_UART, LOCK_CMD);
+            NVIC_EN1_REG &= ~(1<<27);
+            GSM_sendSmsToUser("Access Attempt - Vehicle");
+            NVIC_EN1_REG |= (1<<27);
             Delay_ms(5000);
             return FALSE;
         }

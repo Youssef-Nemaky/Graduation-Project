@@ -18,6 +18,9 @@ void GSM_init(){
     /* Enable Full functionality for GSM (both transmit and receive) */
     GSM_sendCommand(GSM_FULL_FUN_CMD);
 
+    /* Ignore empty sms */
+    GSM_sendCommand(GSM_IGNORE_EMPTY_SMS_CMD);
+
     /* Set SMS mode to text mode */
     GSM_sendCommand(GSM_SMS_TXT_MODE_CMD);
     
@@ -189,6 +192,20 @@ void smsNotification_handler(){
     }
 }
 
+void GSM_sendSmsToUser(uint8 * message){
+    uint8 msgCounter = 0;
+    uint8 sendSMSCmd[25] = "AT+CMGS=\"";
+    strcat(sendSMSCmd, USER_PHONE_NUMBER);
+    strcat(sendSMSCmd, "\"");
+    GSM_sendCommand(sendSMSCmd);
+
+    while (message[msgCounter] != '\0') {
+        Uart_SendByte(GSM_MODULE_UART,message[msgCounter]);
+        msgCounter++;
+    }
+
+    Uart_SendByte(GSM_MODULE_UART,(char)26);
+}
 
 void pumpSetCallBackPtr(void (*ptrToFunc) (void)){
     disconnect_pump_func_ptr = ptrToFunc;

@@ -32,8 +32,8 @@
 #define GSM_SET_APN_USER_CMD "AT+SAPBR=3,1,\"USER\",\"internet\""
 #define GSM_SET_APN_PWD_CMD "AT+SAPBR=3,1,\"PWD\",\"internet\""
 #define GSM_QUERY_BEARER_CMD "AT+SAPBR=2,1"
+#define GSM_IGNORE_EMPTY_SMS_CMD "AT+CSMP=17,167,0,0"
 
-#define USER_PHONE_NUMBER "+201091535566"
 #define DISCONNECT_PUMP_CMD "PUMP=OFF"
 #define SECURITY_SYSTEM_ON_CMD "SYSTEM=ON"
 #define SECURITY_SYSTEM_OFF_CMD "SYSTEM=OFF"
@@ -71,5 +71,6 @@ void systemOffSetCallBackPtr(void (*ptrToFunc) (void));
 void systemOnSetCallBackPtr(void (*ptrToFunc) (void));
 void smsNotification_handler();
 void SMS_handler();
+void GSM_sendSmsToUser(uint8 * message);
 
 #endif
