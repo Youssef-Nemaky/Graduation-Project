@@ -53,7 +53,10 @@ typedef enum
 
 typedef enum
 {
-    UART_POLLING, UART_INTERRUPT
+    UART_TX_RX_INTERRUPT /* Both Tx and Rx interrupts are enabled */
+    ,UART_TX_INTERRUPT /* Only Tx interrupt is enabled */
+    ,UART_RX_INTERRUPT /* Only Rx interrupt is enabled */
+    ,UART_INTERRUPTS_DISABLED /* Both Tx and Rx interrupts are disabled */
 }Uart_Mode;
 
 typedef struct
@@ -107,5 +110,10 @@ void Uart_SendByte(Uart_ModuleNumber uartModuleNumber ,const uint8 byteToSend);
  * Functional responsible for receive byte from another UART device.
  */
 uint8 Uart_ReceiveByte(Uart_ModuleNumber uartModuleNumber);
+
+
+void Uart_RxSetCallBack(Uart_ModuleNumber uartNumber, void (*ptrToFunc)(uint8) );
+
+void UART3_Handler(void);
 
 #endif

@@ -20,6 +20,37 @@
  *                              Global Variables                               *
  *******************************************************************************/
 
+/* ZBAAAALA */
+/* Enable IRQ Interrupts ... This Macro enables IRQ interrupts by clearing the I-bit in the PRIMASK. */
+#define Enable_Interrupts()    __asm("CPSIE I")
+
+/* Disable IRQ Interrupts ... This Macro disables IRQ interrupts by setting the I-bit in the PRIMASK. */
+#define Disable_Interrupts()   __asm("CPSID I")
+
+/* Go to low power mode while waiting for the next interrupt */
+#define Wait_For_Interrupt()   __asm("WFI")
+/* Enable IRQ Interrupts ... This Macro enables IRQ interrupts by clearing the I-bit in the PRIMASK. */
+#define Enable_Interrupts()    __asm("CPSIE I")
+
+/* Disable IRQ Interrupts ... This Macro disables IRQ interrupts by setting the I-bit in the PRIMASK. */
+#define Disable_Interrupts()   __asm("CPSID I")
+
+/* Go to low power mode while waiting for the next interrupt */
+#define Wait_For_Interrupt()   __asm("WFI")
+
+#define NVIC_EN0_REG              (*((volatile unsigned long *)0xE000E100))
+#define NVIC_EN1_REG              (*((volatile unsigned long *)0xE000E104))
+#define NVIC_PRI14_REG            (*((volatile unsigned long *)0xE000E438))
+#define NVIC_PRI5_REG             (*((volatile unsigned long *)0xE000E414))
+
+#define UART3_PRIORITY_MASK 0x1FFFFFFF
+#define UART3_PRIORITY_LEVEL 2
+#define UART3_PRIORITY_BITS_POS 29
+
+#define TIMER1A_PRIORITY_MASK 0xFFFF1FFF
+#define TIMER1A_PRIORITY_LEVEL 3
+#define TIMER1A_PRIORITY_BITS_POS 13
+
 /* Global Variable of type System_State used to block The System at a certain point for an amount of time */
 System_State state = BLOCKED;
 
@@ -36,6 +67,17 @@ uint8 (*authArray[numOfAvAuthMethods])(void) = {passwordAuth, rfidAuth, faceAuth
  *                       	  Functions Definitions                            *
  *******************************************************************************/
 
+void disableFuelPump(){
+    Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_LOW);
+}
+
+void enableFuelPump(){
+    Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_HIGH);
+}
+
+void toggleFuelPump(){
+    Dio_FlipChannel(DioConf_LED1_CHANNEL_ID_INDEX);
+}
 
 /*******************************************************************************************************
  * [Name]: Drivers_Init
@@ -50,13 +92,25 @@ void Drivers_Init(void)
     Dio_Init(&Dio_Configuration);
     Uart_Init(&Uart_Configuration);
     I2c_Init(&I2c_Confiuration);
+    GPS_init();
+    GSM_init();
+    Timer1_setCallBack(GPS_updateLocation);
+    Timer1_Init();
+    
+    pumpSetCallBackPtr(toggleFuelPump);
+    /* We need a basic NVIC driver */
+    NVIC_PRI14_REG = (NVIC_PRI14_REG & UART3_PRIORITY_MASK) | (UART3_PRIORITY_LEVEL<<UART3_PRIORITY_BITS_POS);
+    NVIC_PRI5_REG = (NVIC_PRI5_REG & TIMER1A_PRIORITY_MASK) | (TIMER1A_PRIORITY_LEVEL<<TIMER1A_PRIORITY_BITS_POS);
+    NVIC_EN1_REG |= (1<<27);
+    NVIC_EN0_REG |= (1<<21);
+    Enable_Interrupts();
 }
 
 
 int main(void){
     uint8 option = 0;
     Drivers_Init();
-    Delay_ms(1000); /* give time for the HMI block to finish initialization */
+    GPS_updateLocation();
 
     /* Read the EEPROM address for first time use */
     //EEPROM_readByte(FIRST_TIME_ADDRESS, &g_first_time);
@@ -160,14 +214,14 @@ void rfidSetup(void){
     
     /* get the 1st rfid uid from HMI */
     for(uidCounter = 0; uidCounter < RFID_UNIQUE_ID_LENGTH; uidCounter++){
-        Uart_SendByte(HMI_BLOCK_UART, CONTINUE_CMD);
         rfidTag1[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
+        Uart_SendByte(HMI_BLOCK_UART, CONTINUE_CMD);
     }
-
+    
     /* get the 2nd rfid uid from HMI */
     for (uidCounter = 0; uidCounter < RFID_UNIQUE_ID_LENGTH; uidCounter++) {
-        Uart_SendByte(HMI_BLOCK_UART, CONTINUE_CMD);
         rfidTag2[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
+        Uart_SendByte(HMI_BLOCK_UART, CONTINUE_CMD);
     }
 
     /* Save the 1st unique RFID to the EEPROM */

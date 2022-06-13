@@ -4,6 +4,11 @@
         "rfid.h": "c",
         "hmi_ecu.h": "c",
         "control_ecu.h": "c",
-        "i2c.h": "c"
+        "i2c.h": "c",
+        "gsm.h": "c",
+        "port.h": "c",
+        "gps.h": "c",
+        "gpt.h": "c",
+        "sw_delay.h": "c"
     }
 }

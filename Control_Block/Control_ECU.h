@@ -29,6 +29,10 @@
 #include "I2c.h"
 #include "external_eeprom.h"
 #include "Sw_Delay.h"
+#include "gsm.h"
+#include "gps.h"
+#include "GPT.h"
+
 /*******************************************************************************
  *                                Definitions                                 *
  *******************************************************************************/

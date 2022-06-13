@@ -4,6 +4,16 @@
 
 STATIC const Uart_ConfigModule * Uart_ModulePtr = NULL_PTR;
 
+STATIC void (*UART_RxCallBackPtrs[])(uint8) =  { NULL_PTR, /* UART 0 */
+                                                 NULL_PTR, /* UART 1 */
+                                                 NULL_PTR, /* UART 2 */
+                                                 NULL_PTR, /* UART 3 */ 
+                                                 NULL_PTR, /* UART 4 */
+                                                 NULL_PTR, /* UART 5 */
+                                                 NULL_PTR, /* UART 6 */
+                                                 NULL_PTR  /* UART 7 */
+                                                };
+
 /********************************
 
  * Description :
@@ -110,6 +120,39 @@ void Uart_Init(const Uart_ConfigType * ConfigPtr)
         *(volatile uint32 *)((volatile uint8 *)uartBaseAddressPtr + UART_LCRH_REG_OFFSET) &= UART_CLEAR_WORD_LENGTH_BITS_MASK;
         *(volatile uint32 *)((volatile uint8 *)uartBaseAddressPtr + UART_LCRH_REG_OFFSET) |= (Uart_ModulePtr[uartCounter].noDataBits)<<UART_WORD_LENGTH_SHIFT_MASK;
 
+        /* Setting interrupts */
+        switch (Uart_ModulePtr[uartCounter].mode)
+        {
+        case UART_INTERRUPTS_DISABLED:
+            /* Disable Rx Interrupt */
+            *(volatile uint32 *)((volatile uint8 *)uartBaseAddressPtr + UART_IM_REG_OFFSET) &= ~(1<<UART_RXIM_BIT);
+            
+            /* Disable Tx Interrupt */
+            *(volatile uint32 *)((volatile uint8 *)uartBaseAddressPtr + UART_IM_REG_OFFSET) &= ~(1<<UART_TXIM_BIT);
+            break;
+        case UART_TX_RX_INTERRUPT:
+            /* Enable Rx Interrupt */
+            *(volatile uint32 *)((volatile uint8 *)uartBaseAddressPtr + UART_IM_REG_OFFSET) |= (1<<UART_RXIM_BIT);
+            
+            /* Enable Tx Interrupt */
+            *(volatile uint32 *)((volatile uint8 *)uartBaseAddressPtr + UART_IM_REG_OFFSET) |= (1<<UART_TXIM_BIT);
+            break;
+        case UART_TX_INTERRUPT:
+            /* Enable Tx Interrupt */
+            *(volatile uint32 *)((volatile uint8 *)uartBaseAddressPtr + UART_IM_REG_OFFSET) |= (1<<UART_TXIM_BIT);
+            
+            /* Disable Rx Interrupt */
+            *(volatile uint32 *)((volatile uint8 *)uartBaseAddressPtr + UART_IM_REG_OFFSET) &= ~(1<<UART_RXIM_BIT);
+            break;
+        case UART_RX_INTERRUPT:
+            /* Enable Rx Interrupt */
+            *(volatile uint32 *)((volatile uint8 *)uartBaseAddressPtr + UART_IM_REG_OFFSET) |= (1<<UART_RXIM_BIT);
+            
+            /* Disable Tx Interrupt */
+            *(volatile uint32 *)((volatile uint8 *)uartBaseAddressPtr + UART_IM_REG_OFFSET) &= ~(1<<UART_TXIM_BIT);
+            break;
+        }
+
         /* intializing the clock by giving it zero value to use system clock */
         *(volatile uint32 *)((volatile uint8 *)uartBaseAddressPtr + UART_CC_REG_OFFSET) = 0;
 
@@ -202,3 +245,27 @@ uint8 Uart_ReceiveByte(Uart_ModuleNumber uartModuleNumber){
     return dataReceived;
 
 } 
+
+
+void Uart_RxSetCallBack(Uart_ModuleNumber uartNumber, void (*ptrToFunc)(uint8) ){
+    /* Basic Error checking to make sure we are in range */
+    if(uartNumber < UART0_MODULE_NUMBER || uartNumber > UART7_MODULE_NUMBER){
+        return;
+    } else {
+        /* We are in the valid range so update the pointer */
+        UART_RxCallBackPtrs[uartNumber] = ptrToFunc;
+    }
+}
+
+void UART3_Handler(void){
+    /* Check whether it's Rx or Tx (MAKE IT SUPPORT BOTH Rx and Tx instead of Rx only) */
+
+    /* Call back the function in case of Rx interrupt and give it the value of UART data reg */
+    /* NULL_PTR Error Checking */
+    if(UART_RxCallBackPtrs[UART3_MODULE_NUMBER] != NULL_PTR){
+        (*UART_RxCallBackPtrs[UART3_MODULE_NUMBER])(*(volatile uint32 *)((volatile uint8 *)UART3_BASE_ADDRESS + UART_D_REG_OFFSET));
+    }
+
+    /* Clear the receive interrupt */
+    *(volatile uint32 *)((volatile uint8 *)UART3_BASE_ADDRESS + UART_IC_REG_OFFSET) |= (1<<UART_RXIC_BIT);
+}

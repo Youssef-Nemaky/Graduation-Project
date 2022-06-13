@@ -2852,6 +2852,9 @@
         <name>$PROJ_DIR$\Control_ECU.h</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\cstartup_M.c</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\Det.c</name>
     </file>
     <file>
@@ -2880,6 +2883,33 @@
     </file>
     <file>
         <name>$PROJ_DIR$\external_eeprom_cfg.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\gps.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\gps.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\gps_gsm_buffer.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\gps_gsm_buffer.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\GPT.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\GPT.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\gsm.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\gsm.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\gsm_cfg.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\I2c.c</name>
