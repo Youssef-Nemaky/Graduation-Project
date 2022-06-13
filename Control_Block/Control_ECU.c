@@ -250,12 +250,12 @@ void faceSetup(void){
         /* Get the response from raspberry pi */
         faceResponse = Uart_ReceiveByte(RASPBERRY_PI_UART);
         
-        if(faceResponse == RASP_SETUP_FAILED_ERROR){
+        if(faceResponse != RASP_SETUP_SUCCEEDED_REPORT){
             Uart_SendByte(HMI_BLOCK_UART, FACE_SETUP_FAILED_CMD);
             Uart_SendByte(HMI_BLOCK_UART, LOOK_AT_CAMERA_CMD);
             Delay_ms(1000);
         }
-    } while(faceResponse == RASP_SETUP_FAILED_ERROR); /* Loop until a valid response */
+    } while(faceResponse != RASP_SETUP_SUCCEEDED_REPORT); /* Loop until a valid response */
 }
 
 boolean systemAuth(void){
@@ -367,7 +367,7 @@ uint8 faceAuth(void){
         /* Get the response from raspberry pi */
         faceResponse = Uart_ReceiveByte(RASPBERRY_PI_UART);
         
-        if(faceResponse == RASP_AUTH_FAILURE_CMD){
+        if(faceResponse != RASP_AUTH_SUCCESS_REPORT){
             Uart_SendByte(HMI_BLOCK_UART, FACE_SETUP_FAILED_CMD);
             Uart_SendByte(HMI_BLOCK_UART, LOOK_AT_CAMERA_CMD);
             Delay_ms(1000);
@@ -376,7 +376,7 @@ uint8 faceAuth(void){
                 return FALSE;
             }
         }
-    } while(faceResponse == RASP_AUTH_FAILURE_CMD); /* Loop until a valid response */
+    } while(faceResponse != RASP_AUTH_SUCCESS_REPORT); /* Loop until a valid response */
 
     return TRUE;
 }

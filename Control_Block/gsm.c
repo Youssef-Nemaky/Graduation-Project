@@ -77,7 +77,7 @@ void GSM_sendHTTPRequest(uint8 * url, uint8 dataLength, uint8 * data, GSM_conten
     GSM_sendCommand(dataLengthCommand);
     
     GSM_sendCommand(data);
-    
+    Delay_ms(1000);
     GSM_sendCommand(GSM_HTTP_POST_ACTION);
     Delay_ms(1000);
     GSM_sendCommand(GSM_HTTP_READ_RESPONSE);

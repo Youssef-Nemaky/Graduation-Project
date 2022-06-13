@@ -80,7 +80,9 @@
 #define RASP_FIRST_TIME_CMD 'y'
 #define RASP_AUTH_CMD 'n'
 #define RASP_AUTH_FAILURE_CMD 'f'
+#define RASP_AUTH_SUCCESS_REPORT 't'
 #define RASP_SETUP_FAILED_ERROR 'R'
+#define RASP_SETUP_SUCCEEDED_REPORT 'W'
 #define CONTINUE_CMD 'C'
 /*******************************************************************************
  *                         		Types Declaration                              *

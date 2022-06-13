@@ -30,7 +30,7 @@ void Timer1_Init()
 
 	GPTMTAMR = 0x02; /* Periodic mode - count down */
 
-    GPTMTAILR = 480000000 - 1; /* A timer match value of 1 minute */
+    GPTMTAILR = 960000000 - 1; /* A timer match value of 1 minute */
 
     GPTMIMR|=(1<<0); /* GPTM Timer A Time Out Event Interrupt Mask (Interrupt is enabled in this mode) */
 
@@ -55,7 +55,7 @@ void Timer1_Stop()
 void Timer1_Handler()
 {       
     timer1Counter++; /* Increment the counter value */
-    if(timer1Counter == 1){ /* Check if 5 minutes have passed */
+    if(timer1Counter == 5){ /* Check if 5 minutes have passed */
         if (Timer1_CallBackPtr == NULL_PTR)
         {
             /*do nothing*/
