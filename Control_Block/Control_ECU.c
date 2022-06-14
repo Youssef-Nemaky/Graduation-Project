@@ -112,35 +112,44 @@ int main(void){
     Drivers_Init();
     GPS_updateLocation();
     
-    /* Read the EEPROM address for first time use */
-    //EEPROM_readByte(FIRST_TIME_ADDRESS, &g_first_time);
-
-    EEPROM_readByte(WRONG_ATTEMPTS_ADDRESS, &g_numWrongAttempts);
-
-    if(g_first_time == 0x00){
-        systemSetup();
-    }
     while(1){
-        Uart_SendByte(HMI_BLOCK_UART, DISPLAY_OPTIONS_CMD);
-        option = Uart_ReceiveByte(HMI_BLOCK_UART);
-        switch (option)
-        {
-        case 1:
-            if(systemAuth()){
-                /* OUTPUT 1 to a pin */
-                Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_HIGH);
-                Uart_SendByte(HMI_BLOCK_UART, ACCESS_GRANTED_CMD);
-            }
-            break;
-        case 2:
-            if(systemAuth()){
-                passwordSetup();
-                Uart_SendByte(HMI_BLOCK_UART, PASSWORD_CHANGED_CMD);
-            }
-            break;
-        default:
-            break;
+        /* Read the EEPROM address for first time use */
+        EEPROM_readByte(FIRST_TIME_ADDRESS, &g_first_time);
+
+        EEPROM_readByte(WRONG_ATTEMPTS_ADDRESS, &g_numWrongAttempts);
+
+        if (g_first_time == 0xFF) {
+            systemSetup();
         }
+        else {
+            Uart_SendByte(HMI_BLOCK_UART, DISPLAY_OPTIONS_CMD);
+            option = Uart_ReceiveByte(HMI_BLOCK_UART);
+            switch (option)
+            {
+            case 1:
+                if (systemAuth()) {
+                    /* OUTPUT 1 to a pin */
+                    Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_HIGH);
+                    Uart_SendByte(HMI_BLOCK_UART, ACCESS_GRANTED_CMD);
+                }
+                break;
+            case 2:
+                if (systemAuth()) {
+                    passwordSetup();
+                    Uart_SendByte(HMI_BLOCK_UART, PASSWORD_CHANGED_CMD);
+                }
+                break;
+            case 3:
+                if (systemAuth()) {
+                    resetCredentials();
+                    Uart_SendByte(HMI_BLOCK_UART, SYSTEM_RESET_CREDENTIALS_CMD);
+                }
+                break;
+            default:
+                break;
+            }
+        }
+
     }
 }
 
@@ -157,6 +166,7 @@ void systemSetup(void){
 
     /* Change first time to 0x00 to indicate that this is not the first time when reset occurs */
     EEPROM_writeByte(FIRST_TIME_ADDRESS, 0x00);
+    Delay_ms(5);
 }
 
 void passwordSetup(void){
@@ -382,4 +392,10 @@ uint8 faceAuth(void){
     } while(faceResponse != RASP_AUTH_SUCCESS_REPORT); /* Loop until a valid response */
 
     return TRUE;
+}
+
+void resetCredentials(void){
+    /* Change first time to 0xFF to indicate that this first time and restart credential setup */
+    EEPROM_writeByte(FIRST_TIME_ADDRESS, 0xFF);
+    Delay_ms(5);
 }

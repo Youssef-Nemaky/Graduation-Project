@@ -183,10 +183,10 @@ void LCD_moveCursor(uint8 row,uint8 col)
 		lcd_memory_address=col+0x40;
 		break;
 	case 2:
-		lcd_memory_address=col+0x10;
+		lcd_memory_address=col+0x14;
 		break;
 	case 3:
-		lcd_memory_address=col+0x50;
+		lcd_memory_address=col+0x54;
 		break;
 	}
 	/* Move the LCD cursor to this specific address */

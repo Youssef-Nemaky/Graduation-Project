@@ -9,6 +9,7 @@
         "port.h": "c",
         "gps.h": "c",
         "gpt.h": "c",
-        "sw_delay.h": "c"
+        "sw_delay.h": "c",
+        "*.txt": "c"
     }
 }

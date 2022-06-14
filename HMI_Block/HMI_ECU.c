@@ -96,6 +96,8 @@ int main(void)
             LCD_displayString("1: Unlock The Engine");
             LCD_moveCursor(1, 0);
             LCD_displayString("2: Change Passcode");
+            LCD_moveCursor(2, 0);
+            LCD_displayString("3: Reset Credentials");
             getOption();
             break;
         case ACCESS_GRANTED_CMD:
@@ -103,13 +105,17 @@ int main(void)
             Delay_ms(LCD_MESSAGE_DELAY);
             break;
         case LOCK_CMD:
-            LCD_displayString("7ramy");
+            LCD_displayStringRowColumn(0, 3,"System Locked!");
+            LCD_displayStringRowColumn(1,1,"Retry in 1 Minutes");
             break;
         case PASSWORD_CHANGED_CMD:
             LCD_displayString("Password Changed!");
             break;
+        case SYSTEM_RESET_CREDENTIALS_CMD:
+            LCD_displayString("Credential Reset!");
+            break;
         default:
-            LCD_displayString("IDK WHO U ARE!!");
+            LCD_displayString("Undefined CMD!");
             break;
         }
     }
@@ -219,7 +225,7 @@ void getOption(void){
     do {
         option = KEYPAD_getPressedKey();
         Delay_ms(KEYPAD_DELAY);
-    } while (option != 1 && option != 2);
+    } while (option != 1 && option != 2 && option != 3);
 
     /* Send the option back to the control block */
     Uart_SendByte(CONTROL_BLOCK_UART, option);

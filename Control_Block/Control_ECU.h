@@ -75,6 +75,7 @@
 #define DISPLAY_OPTIONS_CMD (14u)
 #define GET_CHOSEN_OPTION_CMD (15u)
 #define PASSWORD_CHANGED_CMD (16u)
+#define SYSTEM_RESET_CREDENTIALS_CMD (17u)
 
 /* Raspberry Pi Commands */
 #define RASP_FIRST_TIME_CMD 'y'
@@ -122,6 +123,6 @@ uint8 faceAuth(void);
 uint8 rfidAuth(void);
 uint8 passwordAuth(void);
 boolean systemAuth(void);
-
+void resetCredentials(void);
 #endif /* CONTROL_ECU_H_ */
 
