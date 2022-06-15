@@ -39,7 +39,7 @@
 
 #define NUMBER_OF_ITERATIONS_PER_ONE_MILI_SECOND 762
 
-#define LOCK_TIME 60000
+#define LOCK_TIME 30000
 #define INCORRECT 0
 #define CORRECT 1
 #define LOCK 2
@@ -53,7 +53,8 @@
 #define WRONG_ATTEMPTS_ADDRESS 0x060
 
 #define PASSWORD_LENGTH 5
-
+#define MAX_NUMBER_OF_FAILED_ATTEMPTS 5
+#define MAX_NUMBER_OF_LOCKS 3
 #define numOfAvAuthMethods 3
 
 /* New Day, New Beggining */
@@ -124,5 +125,6 @@ uint8 rfidAuth(void);
 uint8 passwordAuth(void);
 boolean systemAuth(void);
 void resetCredentials(void);
+void generateOTP(uint8* numbers, uint8 length);
 #endif /* CONTROL_ECU_H_ */
 

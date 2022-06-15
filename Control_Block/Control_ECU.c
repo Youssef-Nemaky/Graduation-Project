@@ -16,6 +16,7 @@
  *                                  Includes                                   *
  *******************************************************************************/
 #include "Control_ECU.h"
+#include "stdlib.h"
 /*******************************************************************************
  *                              Global Variables                               *
  *******************************************************************************/
@@ -56,7 +57,7 @@ System_State state = BLOCKED;
 
 /* Global Variable that holds The Value of Times The Passcode is entered in case it was entered wrong */
 uint8 g_numWrongAttempts = 0;
-
+uint8 g_numLocks = 0;
 uint8 g_first_time = 0;
 
 uint8 numOfUsedAuthMethods = 3;
@@ -97,7 +98,8 @@ void Drivers_Init(void)
     Timer1_setCallBack(GPS_updateLocation);
     Timer1_Init();
     
-    pumpSetCallBackPtr(toggleFuelPump);
+    systemOffSetCallBackPtr(disableFuelPump);
+    systemOnSetCallBackPtr(enableFuelPump);
     /* We need a basic NVIC driver */
     NVIC_PRI14_REG = (NVIC_PRI14_REG & UART3_PRIORITY_MASK) | (UART3_PRIORITY_LEVEL<<UART3_PRIORITY_BITS_POS);
     NVIC_PRI5_REG = (NVIC_PRI5_REG & TIMER1A_PRIORITY_MASK) | (TIMER1A_PRIORITY_LEVEL<<TIMER1A_PRIORITY_BITS_POS);
@@ -109,8 +111,10 @@ void Drivers_Init(void)
 
 int main(void){
     uint8 option = 0;
+    uint8 otpCode[10];
     Drivers_Init();
-    GPS_updateLocation();
+    
+    
     
     while(1){
         /* Read the EEPROM address for first time use */
@@ -143,6 +147,7 @@ int main(void){
                 if (systemAuth()) {
                     resetCredentials();
                     Uart_SendByte(HMI_BLOCK_UART, SYSTEM_RESET_CREDENTIALS_CMD);
+                    Delay_ms(3000);
                 }
                 break;
             default:
@@ -273,13 +278,18 @@ boolean systemAuth(void){
     for(authCounter = 0; authCounter < numOfUsedAuthMethods; authCounter++){
         g_numWrongAttempts = 0;
         if((*authArray[authCounter])() == FALSE){
-            Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_LOW);
-            Uart_SendByte(HMI_BLOCK_UART, LOCK_CMD);
-            NVIC_EN1_REG &= ~(1<<27);
-            GSM_sendSmsToUser("Access Attempt - Vehicle");
-            NVIC_EN1_REG |= (1<<27);
-            Delay_ms(5000);
-            return FALSE;
+            g_numLocks++;
+            if(g_numLocks >= MAX_NUMBER_OF_LOCKS){
+                
+            } else {
+                Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_LOW);
+                Uart_SendByte(HMI_BLOCK_UART, LOCK_CMD);
+                NVIC_EN1_REG &= ~(1 << 27);
+                GSM_sendSmsToUser("Access Attempt - Vehicle");
+                NVIC_EN1_REG |= (1 << 27);
+                Delay_ms(LOCK_TIME);
+                return FALSE;
+            }
         }
     }
     return TRUE;
@@ -314,7 +324,7 @@ uint8 passwordAuth(void){
         if(isMatch == FALSE){
             Uart_SendByte(HMI_BLOCK_UART, WRONG_PASSWORD_CMD);
             g_numWrongAttempts++;
-            if(g_numWrongAttempts >= 3){
+            if(g_numWrongAttempts >= MAX_NUMBER_OF_FAILED_ATTEMPTS){
                 return FALSE;
             }
         }
@@ -356,7 +366,7 @@ uint8 rfidAuth(void){
         if(isMatch == FALSE){
             Uart_SendByte(HMI_BLOCK_UART, TAG_FAILED_CMD);
             g_numWrongAttempts++;
-            if(g_numWrongAttempts >= 3){
+            if(g_numWrongAttempts >= MAX_NUMBER_OF_FAILED_ATTEMPTS){
                 return FALSE;
             }
         }
@@ -382,12 +392,12 @@ uint8 faceAuth(void){
         
         if(faceResponse != RASP_AUTH_SUCCESS_REPORT){
             Uart_SendByte(HMI_BLOCK_UART, FACE_SETUP_FAILED_CMD);
-            Uart_SendByte(HMI_BLOCK_UART, LOOK_AT_CAMERA_CMD);
             Delay_ms(1000);
             g_numWrongAttempts++;
-            if(g_numWrongAttempts >= 3){
+            if(g_numWrongAttempts >= MAX_NUMBER_OF_FAILED_ATTEMPTS){
                 return FALSE;
             }
+            Uart_SendByte(HMI_BLOCK_UART, LOOK_AT_CAMERA_CMD);
         }
     } while(faceResponse != RASP_AUTH_SUCCESS_REPORT); /* Loop until a valid response */
 
@@ -398,4 +408,19 @@ void resetCredentials(void){
     /* Change first time to 0xFF to indicate that this first time and restart credential setup */
     EEPROM_writeByte(FIRST_TIME_ADDRESS, 0xFF);
     Delay_ms(5);
+}
+
+void generateOTP(uint8* numbers, uint8 length){
+    uint8 counter = 0;
+    volatile uint8 generatedNumber = 0;
+    for(counter = 0; counter < length; counter++){
+        srand(Timer1_ReadValue());
+        generatedNumber = rand() % 14;
+        
+        if(generatedNumber >= 0 && generatedNumber <= 9){
+            numbers[counter] = generatedNumber + '0';
+        } else {
+            numbers[counter] = generatedNumber - 10 + 'A';
+        }
+    }
 }

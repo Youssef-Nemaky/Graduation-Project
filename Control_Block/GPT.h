@@ -20,6 +20,7 @@
 #define RCGCTIMER (*((volatile unsigned long*)0x400FE604))
 #define GPTMCTL (*((volatile unsigned long*)0x4003100C))
 #define GPTMCFG (*((volatile unsigned long*)0x40031000))
+#define GPTMTAR (*((volatile unsigned long*)0x40031048))
 #define GPTMTAMR (*((volatile unsigned long*)0x40031004))
 #define GPTMTAILR (*((volatile unsigned long*)0x40031028))
 #define GPTMRIS (*((volatile unsigned long*)0x4003101C))
@@ -33,5 +34,5 @@ void Timer1_Start();
 void Timer1_Handler();
 void Timer1_setCallBack(void (*ptr)());
 void Timer1_Stop();
-
+uint32 Timer1_ReadValue();
 #endif /* TIMER_H_ */

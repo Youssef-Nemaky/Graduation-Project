@@ -4,7 +4,6 @@
 static void integerToString(sint8 * dest, uint8 number);
 
 /* call back ptrs */
-static void (*disconnect_pump_func_ptr)(void) = NULL_PTR;
 static void (*disconnect_system_func_ptr)(void) = NULL_PTR;
 static void (*connect_system_func_ptr)(void) = NULL_PTR;
 
@@ -139,16 +138,6 @@ void SMS_handler(){
 
 
     if (isFromUser == TRUE) {
-        if (strstr((uint8*)g_gps_gsm_buffer, DISCONNECT_PUMP_CMD)) {
-            /* Call Back */
-            if (disconnect_pump_func_ptr != NULL_PTR) {
-                (*disconnect_pump_func_ptr)();
-            }
-            GSM_sendCommand(DELETE_ALL_SMS_CMD);
-            return;
-        }
-
-
         if (strstr((uint8*)g_gps_gsm_buffer, SECURITY_SYSTEM_OFF_CMD)) {
             /* Call Back */
             if (disconnect_system_func_ptr != NULL_PTR) {
@@ -205,10 +194,6 @@ void GSM_sendSmsToUser(uint8 * message){
     }
 
     Uart_SendByte(GSM_MODULE_UART,(char)26);
-}
-
-void pumpSetCallBackPtr(void (*ptrToFunc) (void)){
-    disconnect_pump_func_ptr = ptrToFunc;
 }
 
 void systemOffSetCallBackPtr(void (*ptrToFunc) (void)){

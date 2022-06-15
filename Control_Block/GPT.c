@@ -74,3 +74,7 @@ void Timer1_setCallBack(void (*ptr)())
 {
    Timer1_CallBackPtr = ptr; /* Set the call back function ptr */
 }
+
+uint32 Timer1_ReadValue(){
+    return GPTMTAR;
+}
