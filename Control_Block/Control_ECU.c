@@ -115,7 +115,6 @@ int main(void){
     Drivers_Init();
     
     
-    
     while(1){
         /* Read the EEPROM address for first time use */
         EEPROM_readByte(FIRST_TIME_ADDRESS, &g_first_time);

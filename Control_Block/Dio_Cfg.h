@@ -47,11 +47,11 @@
 //#define DioConf_SW1_CHANNEL_ID_INDEX         ((uint8)0x01)
 
 /* DIO Configured Port ID's  */
-#define DioConf_LED1_PORT_NUM                ((Dio_PortType)GPIO_PORTF_ID) /* PORTF */
+#define DioConf_LED1_PORT_NUM                ((Dio_PortType)GPIO_PORTA_ID) /* PORTF */
 //#define DioConf_SW1_PORT_NUM                 ((Dio_PortType)GPIO_PORTF_ID) /* PORTF */
 
 /* DIO Configured Channel ID's */
-#define DioConf_LED1_CHANNEL_NUM             ((Dio_ChannelType)GPIO_PF1) /* Pin 1 in PORTF */
+#define DioConf_LED1_CHANNEL_NUM             ((Dio_ChannelType)GPIO_PA7) /* Pin 1 in PORTF */
 //#define DioConf_SW1_CHANNEL_NUM              ((Dio_ChannelType)GPIO_PF4) /* Pin 4 in PORTF */
 
 

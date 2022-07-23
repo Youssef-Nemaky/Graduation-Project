@@ -1,15 +1,15 @@
-"D:\Embedded_non-stop\Graduation Project\HMI_Block\RFID.c"
+"D:\embedded_non-stop\Graduation-Project\HMI_Block\RFID.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-D:\Embedded_non-stop\Graduation Project\HMI_Block\Debug\BrowseInfo\RFID.pbi.dep
+D:\embedded_non-stop\Graduation-Project\HMI_Block\Debug\BrowseInfo\RFID.pbi.dep
 -o
-D:\Embedded_non-stop\Graduation Project\HMI_Block\Debug\BrowseInfo\RFID.pbi
+D:\embedded_non-stop\Graduation-Project\HMI_Block\Debug\BrowseInfo\RFID.pbi
 -I
-D:\Embedded_non-stop\Graduation Project\HMI_Block
+D:\embedded_non-stop\Graduation-Project\HMI_Block
 -I
 C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c\aarch32
 -I

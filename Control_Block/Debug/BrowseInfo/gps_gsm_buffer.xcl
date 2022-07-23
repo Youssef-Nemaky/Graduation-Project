@@ -1,15 +1,15 @@
-"D:\Embedded_non-stop\Graduation Project\Control_Block\gps_gsm_buffer.c"
+"D:\embedded_non-stop\Graduation-Project\Control_Block\gps_gsm_buffer.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-D:\Embedded_non-stop\Graduation Project\Control_Block\Debug\BrowseInfo\gps_gsm_buffer.pbi.dep
+D:\embedded_non-stop\Graduation-Project\Control_Block\Debug\BrowseInfo\gps_gsm_buffer.pbi.dep
 -o
-D:\Embedded_non-stop\Graduation Project\Control_Block\Debug\BrowseInfo\gps_gsm_buffer.pbi
+D:\embedded_non-stop\Graduation-Project\Control_Block\Debug\BrowseInfo\gps_gsm_buffer.pbi
 -I
-D:\Embedded_non-stop\Graduation Project\Control_Block
+D:\embedded_non-stop\Graduation-Project\Control_Block
 -I
 C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c\aarch32
 -I
