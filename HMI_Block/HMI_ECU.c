@@ -98,6 +98,8 @@ int main(void)
             LCD_displayString("2: Change Passcode");
             LCD_moveCursor(2, 0);
             LCD_displayString("3: Reset Credentials");
+            LCD_moveCursor(3, 0);
+            LCD_displayString("4: Fast RESET");
             getOption();
             break;
         case ACCESS_GRANTED_CMD:
@@ -225,7 +227,7 @@ void getOption(void){
     do {
         option = KEYPAD_getPressedKey();
         Delay_ms(KEYPAD_DELAY);
-    } while (option != 1 && option != 2 && option != 3);
+    } while (option != 1 && option != 2 && option != 3 && option != 4);
 
     /* Send the option back to the control block */
     Uart_SendByte(CONTROL_BLOCK_UART, option);

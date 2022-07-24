@@ -132,6 +132,7 @@ int main(void){
             case 1:
                 if (systemAuth()) {
                     /* OUTPUT 1 to a pin */
+                    /* Do in a function later plz */
                     Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_HIGH);
                     Uart_SendByte(HMI_BLOCK_UART, ACCESS_GRANTED_CMD);
                 }
@@ -148,6 +149,13 @@ int main(void){
                     Uart_SendByte(HMI_BLOCK_UART, SYSTEM_RESET_CREDENTIALS_CMD);
                     Delay_ms(3000);
                 }
+                break;
+            case 4:
+                Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_LOW);
+                EEPROM_writeByte(FIRST_TIME_ADDRESS, 0xFF);
+                Delay_ms(10);
+                EEPROM_writeByte(WRONG_ATTEMPTS_ADDRESS, 0);
+                Delay_ms(10);
                 break;
             default:
                 break;
