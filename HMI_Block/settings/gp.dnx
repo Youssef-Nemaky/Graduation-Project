@@ -2,7 +2,7 @@
 <settings>
     <LmiFtdiDriver>
         <LMIFTDIserialNo>0E22CAF6</LMIFTDIserialNo>
-        <LMIFTDIfoundProbes>0E22CAF6:0E22E950:</LMIFTDIfoundProbes>
+        <LMIFTDIfoundProbes />
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
         <CStepIntDis>_ 0</CStepIntDis>
         <LmiFtdiResetStyle>1</LmiFtdiResetStyle>
@@ -13,7 +13,7 @@
         <MemConfigValue>C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\CONFIG\debugger\TexasInstruments\TM4C123GH6PM.ddf</MemConfigValue>
     </PlDriver>
     <DebugChecksum>
-        <Checksum>31830226</Checksum>
+        <Checksum>2944936512</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>

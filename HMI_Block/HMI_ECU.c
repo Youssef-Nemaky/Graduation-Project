@@ -116,6 +116,15 @@ int main(void)
         case SYSTEM_RESET_CREDENTIALS_CMD:
             LCD_displayString("Credential Reset!");
             break;
+        case OTP_CMD:
+            LCD_displayStringRowColumn(0, 5,"Enter OTP:");
+            LCD_moveCursor(1, 6);
+            getOTP();
+            break;
+        case WRONG_OTP_CMD:
+            LCD_displayStringRowColumn(0, 5, "Wrong OTP!");
+            LCD_displayStringRowColumn(1,3, "System Locked!");
+            break;
         default:
             LCD_displayString("Undefined CMD!");
             break;
@@ -151,15 +160,23 @@ void getPassword(void){
     uint8 continueCMD = 0;
 
     /* loop through the passcode array and save the input pressed key */
-    for(passCodeCounter = 0; passCodeCounter < PASSCODE_LENGTH;){
+    for(passCodeCounter = 0; passCodeCounter < PASSCODE_LENGTH; passCodeCounter++){
         /* Get the pressed key from the keypad */
         pressedKey = KEYPAD_getPressedKey();
+        passCode[passCodeCounter] = pressedKey;
         /* Make sure it's a number not a character */
         if((pressedKey >= 0) && (pressedKey <= 9)){
-            /* Only increment the variable passCodeCounter when the entered key is a number */
-            passCode[passCodeCounter++] = pressedKey;
-            LCD_displayCharacter('*');
+            LCD_moveCursor(1, 7 + passCodeCounter);
+            LCD_displayCharacter('0' + pressedKey);
+        } else {
+            LCD_moveCursor(1, 7 + passCodeCounter);
+            LCD_displayCharacter(pressedKey);
         }
+
+        Delay_ms(250); /* Give time to read the pressed key */
+        LCD_moveCursor(1, 7 + passCodeCounter);
+        LCD_displayCharacter('*');
+
         /* A small delay to avoid button de-bouncing */
         Delay_ms(KEYPAD_DELAY);
     } /* end of for loop */
@@ -170,6 +187,48 @@ void getPassword(void){
         continueCMD = Uart_ReceiveByte(CONTROL_BLOCK_UART);
     } /* end of for loop */
 } /* end of getPassword function */
+
+
+
+void getOTP(void){
+    /* Array to hold the passcode */
+    uint8 otpCode[OTP_LENGTH] = { 0 };
+    /* A counter to loop through the passcode array */
+    uint8 otpCounter = 0;
+    /* A variable to hold the pressed key */
+    uint8 pressedKey = 0;
+    /* A variable to read the continue command */
+    uint8 continueCMD = 0;
+
+    /* loop through the otp array and save the input pressed key */
+    for(otpCounter = 0; otpCounter < OTP_LENGTH; otpCounter++){
+        /* Get the pressed key from the keypad */
+        pressedKey = KEYPAD_getPressedKey();
+        otpCode[otpCounter] = pressedKey;
+        /* Make sure it's a number not a character */
+        if((pressedKey >= 0) && (pressedKey <= 9)){
+            LCD_moveCursor(1, 7 + otpCounter);
+            LCD_displayCharacter('0' + pressedKey);
+        } else {
+            LCD_moveCursor(1, 7 + otpCounter);
+            LCD_displayCharacter(pressedKey);
+        }
+
+        Delay_ms(250); /* Give time to read the pressed key */
+        LCD_moveCursor(1, 7 + otpCounter);
+        LCD_displayCharacter('*');
+
+        /* A small delay to avoid button de-bouncing */
+        Delay_ms(KEYPAD_DELAY);
+    } /* end of for loop */
+
+    /* Send the otp code to control block after reading it from the user */
+    for(otpCounter = 0; otpCounter < OTP_LENGTH; otpCounter++){
+        Uart_SendByte(CONTROL_BLOCK_UART, otpCode[otpCounter]);
+        continueCMD = Uart_ReceiveByte(CONTROL_BLOCK_UART);
+    } /* end of for loop */
+} /* end of getOTP function */
+
 
 void getRfidTag(void){
     /* Array to hold the value of the unique id of the rfid tag */

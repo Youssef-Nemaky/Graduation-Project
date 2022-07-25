@@ -43,6 +43,7 @@
 #define NVIC_EN1_REG              (*((volatile unsigned long *)0xE000E104))
 #define NVIC_PRI14_REG            (*((volatile unsigned long *)0xE000E438))
 #define NVIC_PRI5_REG             (*((volatile unsigned long *)0xE000E414))
+#define NVIC_PRI4_REG             (*((volatile unsigned long *)0xE000E410))
 
 #define UART3_PRIORITY_MASK 0x1FFFFFFF
 #define UART3_PRIORITY_LEVEL 2
@@ -51,6 +52,10 @@
 #define TIMER1A_PRIORITY_MASK 0xFFFF1FFF
 #define TIMER1A_PRIORITY_LEVEL 3
 #define TIMER1A_PRIORITY_BITS_POS 13
+
+#define TIMER0A_PRIORITY_MASK 0x1FFFFFFF
+#define TIMER0A_PRIORITY_LEVEL 4
+#define TIMER0A_PRIORITY_BITS_POS 29
 
 /* Global Variable of type System_State used to block The System at a certain point for an amount of time */
 System_State state = BLOCKED;
@@ -97,14 +102,18 @@ void Drivers_Init(void)
     GSM_init();
     Timer1_setCallBack(GPS_updateLocation);
     Timer1_Init();
+    Timer0_setCallBack(toggleFuelPump);
+    Timer0_Init();
     
     systemOffSetCallBackPtr(disableFuelPump);
     systemOnSetCallBackPtr(enableFuelPump);
     /* We need a basic NVIC driver */
     NVIC_PRI14_REG = (NVIC_PRI14_REG & UART3_PRIORITY_MASK) | (UART3_PRIORITY_LEVEL<<UART3_PRIORITY_BITS_POS);
     NVIC_PRI5_REG = (NVIC_PRI5_REG & TIMER1A_PRIORITY_MASK) | (TIMER1A_PRIORITY_LEVEL<<TIMER1A_PRIORITY_BITS_POS);
+    NVIC_PRI4_REG = (NVIC_PRI4_REG & TIMER0A_PRIORITY_MASK) | (TIMER0A_PRIORITY_LEVEL<<TIMER0A_PRIORITY_BITS_POS);
     NVIC_EN1_REG |= (1<<27);
     NVIC_EN0_REG |= (1<<21);
+    NVIC_EN0_REG |= (1<<19);
     Enable_Interrupts();
 }
 
@@ -113,8 +122,7 @@ int main(void){
     uint8 option = 0;
     uint8 otpCode[10];
     Drivers_Init();
-    
-    
+    g_numLocks = 3;
     while(1){
         /* Read the EEPROM address for first time use */
         EEPROM_readByte(FIRST_TIME_ADDRESS, &g_first_time);
@@ -282,12 +290,44 @@ void faceSetup(void){
 
 boolean systemAuth(void){
     uint8 authCounter = 0;
+    uint8 otpCode[OTP_LENGTH+1] = {0};
+    otpCode[OTP_LENGTH] = '\0';
+    uint8 otpMessage[OTP_LENGTH+20] = "OTP: ";
+    uint8 HMI_OTP[OTP_LENGTH];
+    uint8 uidCounter = 0;
+    boolean isMatch = TRUE;
+
     for(authCounter = 0; authCounter < numOfUsedAuthMethods; authCounter++){
         g_numWrongAttempts = 0;
         if((*authArray[authCounter])() == FALSE){
             g_numLocks++;
             if(g_numLocks >= MAX_NUMBER_OF_LOCKS){
-                
+                generateOTP(otpCode, OTP_LENGTH);
+                strcat(otpMessage, otpCode);
+
+                NVIC_EN1_REG &= ~(1 << 27);
+                GSM_sendSmsToUser(otpMessage);
+                NVIC_EN1_REG |= (1 << 27);
+
+                Uart_SendByte(HMI_BLOCK_UART, OTP_CMD);
+                for (uidCounter = 0; uidCounter < OTP_LENGTH; uidCounter++) {
+                    HMI_OTP[uidCounter] = Uart_ReceiveByte(HMI_BLOCK_UART);
+                    if(HMI_OTP[uidCounter] >= 0 && HMI_OTP[uidCounter] <= 9) HMI_OTP[uidCounter] = HMI_OTP[uidCounter] + '0';
+                    Uart_SendByte(HMI_BLOCK_UART, CONTINUE_CMD);
+                }
+
+                for (uidCounter = 0; uidCounter < OTP_LENGTH; uidCounter++) {
+                    if (HMI_OTP[uidCounter] != otpCode[uidCounter]) {
+                        isMatch = FALSE;
+                        break;
+                    }
+                }
+                if(isMatch != TRUE){
+                    Uart_SendByte(HMI_BLOCK_UART, WRONG_OTP_CMD);
+                    Delay_ms(30000);
+                }
+                g_numLocks = 0;
+                return FALSE;
             } else {
                 Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_LOW);
                 Uart_SendByte(HMI_BLOCK_UART, LOCK_CMD);
@@ -299,6 +339,7 @@ boolean systemAuth(void){
             }
         }
     }
+    g_numLocks = 0;
     return TRUE;
 }
 

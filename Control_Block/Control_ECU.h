@@ -53,9 +53,11 @@
 #define WRONG_ATTEMPTS_ADDRESS 0x060
 
 #define PASSWORD_LENGTH 5
-#define MAX_NUMBER_OF_FAILED_ATTEMPTS 5
+#define MAX_NUMBER_OF_FAILED_ATTEMPTS 3
 #define MAX_NUMBER_OF_LOCKS 3
 #define numOfAvAuthMethods 3
+
+#define OTP_LENGTH 8
 
 /* New Day, New Beggining */
 /* HMI Commands */
@@ -77,6 +79,9 @@
 #define GET_CHOSEN_OPTION_CMD (15u)
 #define PASSWORD_CHANGED_CMD (16u)
 #define SYSTEM_RESET_CREDENTIALS_CMD (17u)
+#define OTP_CMD (18u)
+#define WRONG_OTP_CMD (19u)
+
 
 /* Raspberry Pi Commands */
 #define RASP_FIRST_TIME_CMD 'y'

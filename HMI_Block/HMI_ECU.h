@@ -42,7 +42,7 @@
 
 #define numOfAvAuthMethods 3
 #define PASSCODE_LENGTH 5
-
+#define OTP_LENGTH 8
 #define INCORRECT 0
 #define CORRECT 1
 #define PASSWORD_OR_LOCK 3
@@ -70,6 +70,8 @@
 #define GET_CHOSEN_OPTION_CMD (15u)
 #define PASSWORD_CHANGED_CMD (16u)
 #define SYSTEM_RESET_CREDENTIALS_CMD (17u)
+#define OTP_CMD (18u)
+#define WRONG_OTP_CMD (19u)
 /*******************************************************************************
  *                         		Types Declaration                              *
  *******************************************************************************/
@@ -186,6 +188,7 @@ void rfidReadTag(uint8 * a_rfid_tag);
 
 void getPassword(void);
 
+void getOTP(void);
 void getOption(void);
 
 #endif /* HMI_ECU_H_ */

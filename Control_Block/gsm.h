@@ -27,10 +27,18 @@
  * GPRS: GPRS connection 
  */
 #define GSM_SET_BEARER_PARAMS_CMD "AT+SAPBR=3,1,\"Contype\",\"GPRS\""
-
+/* 
+Vodafone APN Settings 
 #define GSM_SET_APN_SETTINGS_CMD "AT+SAPBR=3,1,\"APN\",\"internet.vodafone.net\""
 #define GSM_SET_APN_USER_CMD "AT+SAPBR=3,1,\"USER\",\"internet\""
 #define GSM_SET_APN_PWD_CMD "AT+SAPBR=3,1,\"PWD\",\"internet\""
+*/
+
+
+/* WE APN Settings */
+#define GSM_SET_APN_SETTINGS_CMD "AT+SAPBR=3,1,\"APN\",\"internet.we.net\""
+#define GSM_SET_APN_USER_CMD "AT+SAPBR=3,1,\"USER\",\"\""
+#define GSM_SET_APN_PWD_CMD "AT+SAPBR=3,1,\"PWD\",\"\""
 #define GSM_QUERY_BEARER_CMD "AT+SAPBR=2,1"
 #define GSM_IGNORE_EMPTY_SMS_CMD "AT+CSMP=17,167,0,0"
 

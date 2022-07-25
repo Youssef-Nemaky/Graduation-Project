@@ -27,6 +27,7 @@ extern void SysTick_Handler( void );
 /* TM4C123GH6PM Specific Interrupts */
 extern void UART3_Handler( void );
 extern void Timer1_Handler( void );
+extern void Timer0_Handler( void );
 
 typedef void( *intfunc )( void );
 typedef union { intfunc __fun; void * __ptr; } intvec_elem;
@@ -81,7 +82,7 @@ const intvec_elem __vector_table[] =
   0, /*32 */
   0, /*33 */
   0, /*34 */
-  0, /*35 */
+  Timer0_Handler, /*35 */
   0, /*36 */
   Timer1_Handler, /*37 */
   0, /*38 */
