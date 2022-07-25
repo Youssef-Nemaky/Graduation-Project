@@ -85,6 +85,10 @@ void toggleFuelPump(){
     Dio_FlipChannel(DioConf_LED1_CHANNEL_ID_INDEX);
 }
 
+void changeAuthOption(uint8 opt){
+    numOfUsedAuthMethods = opt;
+}
+
 /*******************************************************************************************************
  * [Name]: Drivers_Init
  * [Parameters]: void (none)
@@ -107,6 +111,7 @@ void Drivers_Init(void)
     
     systemOffSetCallBackPtr(disableFuelPump);
     systemOnSetCallBackPtr(enableFuelPump);
+    changeAuthOptSetCallBackPtr(changeAuthOption);
     /* We need a basic NVIC driver */
     NVIC_PRI14_REG = (NVIC_PRI14_REG & UART3_PRIORITY_MASK) | (UART3_PRIORITY_LEVEL<<UART3_PRIORITY_BITS_POS);
     NVIC_PRI5_REG = (NVIC_PRI5_REG & TIMER1A_PRIORITY_MASK) | (TIMER1A_PRIORITY_LEVEL<<TIMER1A_PRIORITY_BITS_POS);
@@ -305,6 +310,8 @@ boolean systemAuth(void){
                 generateOTP(otpCode, OTP_LENGTH);
                 strcat(otpMessage, otpCode);
 
+                GPS_updateLocation();
+
                 NVIC_EN1_REG &= ~(1 << 27);
                 GSM_sendSmsToUser(otpMessage);
                 NVIC_EN1_REG |= (1 << 27);
@@ -331,6 +338,7 @@ boolean systemAuth(void){
             } else {
                 Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_LOW);
                 Uart_SendByte(HMI_BLOCK_UART, LOCK_CMD);
+                GPS_updateLocation();
                 NVIC_EN1_REG &= ~(1 << 27);
                 GSM_sendSmsToUser("Access Attempt - Vehicle");
                 NVIC_EN1_REG |= (1 << 27);

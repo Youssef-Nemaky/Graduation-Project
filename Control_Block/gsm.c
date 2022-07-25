@@ -6,6 +6,7 @@ static void integerToString(sint8 * dest, uint8 number);
 /* call back ptrs */
 static void (*disconnect_system_func_ptr)(void) = NULL_PTR;
 static void (*connect_system_func_ptr)(void) = NULL_PTR;
+static void (*change_auth_option_ptr)(uint8) = NULL_PTR;
 
 void GSM_init(){
     uint8 counter = 0;
@@ -150,12 +151,35 @@ void SMS_handler(){
 
         if (strstr((uint8*)g_gps_gsm_buffer, SECURITY_SYSTEM_ON_CMD)) {
             /* Call Back */
-            if (SECURITY_SYSTEM_OFF_CMD != NULL_PTR) {
+            if (connect_system_func_ptr != NULL_PTR) {
                 (*connect_system_func_ptr)();
             }
             GSM_sendCommand(DELETE_ALL_SMS_CMD);
             return;
         }
+
+        if(strstr((uint8*)g_gps_gsm_buffer, AUTH_OPT_1)){
+            if(change_auth_option_ptr != NULL_PTR){
+                (*change_auth_option_ptr)(1);
+            }
+            GSM_sendCommand(DELETE_ALL_SMS_CMD);
+            return;
+        }
+        if(strstr((uint8*)g_gps_gsm_buffer, AUTH_OPT_2)){
+            if(change_auth_option_ptr != NULL_PTR){
+                (*change_auth_option_ptr)(2);
+            }
+            GSM_sendCommand(DELETE_ALL_SMS_CMD);
+            return;
+        }
+        if(strstr((uint8*)g_gps_gsm_buffer, AUTH_OPT_3)){
+            if(change_auth_option_ptr != NULL_PTR){
+                (*change_auth_option_ptr)(3);
+            }
+            GSM_sendCommand(DELETE_ALL_SMS_CMD);
+            return;
+        }
+
         GSM_sendCommand(DELETE_ALL_SMS_CMD);
     }
 }
@@ -202,4 +226,8 @@ void systemOffSetCallBackPtr(void (*ptrToFunc) (void)){
 
 void systemOnSetCallBackPtr(void (*ptrToFunc) (void)){
     disconnect_system_func_ptr = ptrToFunc;
+}
+
+void changeAuthOptSetCallBackPtr(void (*ptrToFunc) (uint8)){
+    change_auth_option_ptr = ptrToFunc;
 }

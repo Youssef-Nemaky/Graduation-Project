@@ -29,7 +29,7 @@ void gps_gsm_reset_buffer(void){
     uint8 bufferCounter = 0; 
 
     /* Reset the buffer itself */
-    for(bufferCounter = 0; bufferCounter <= g_gps_gsm_buffer_index; bufferCounter++){
+    for(bufferCounter = 0; bufferCounter < GPS_GSM_BUFFER_SIZE; bufferCounter++){
         g_gps_gsm_buffer[bufferCounter] = '\0';
     }
     

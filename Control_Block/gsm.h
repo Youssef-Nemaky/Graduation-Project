@@ -44,6 +44,11 @@ Vodafone APN Settings
 
 #define SECURITY_SYSTEM_ON_CMD "systemOn"
 #define SECURITY_SYSTEM_OFF_CMD "systemOff"
+#define AUTH_OPT_1 "auth = op1"
+#define AUTH_OPT_2 "auth = op2"
+#define AUTH_OPT_3 "auth = op3"
+
+
 
 #define SMS_RECEIVED "+CMTI"
 #define SMS_READ "+CMGR"
@@ -76,6 +81,7 @@ void GSM_sendHTTPRequest(uint8 * url, uint8 dataLength, uint8 * data, GSM_conten
 void pumpSetCallBackPtr(void (*ptrToFunc) (void));
 void systemOffSetCallBackPtr(void (*ptrToFunc) (void));
 void systemOnSetCallBackPtr(void (*ptrToFunc) (void));
+void changeAuthOptSetCallBackPtr(void (*ptrToFunc) (uint8));
 void smsNotification_handler();
 void SMS_handler();
 void GSM_sendSmsToUser(uint8 * message);
