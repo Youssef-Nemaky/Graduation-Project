@@ -41,6 +41,7 @@
 
 #define NVIC_EN0_REG              (*((volatile unsigned long *)0xE000E100))
 #define NVIC_EN1_REG              (*((volatile unsigned long *)0xE000E104))
+#define NVIC_PRI7_REG             (*((volatile unsigned long *)0xE000E41C))
 #define NVIC_PRI14_REG            (*((volatile unsigned long *)0xE000E438))
 #define NVIC_PRI5_REG             (*((volatile unsigned long *)0xE000E414))
 #define NVIC_PRI4_REG             (*((volatile unsigned long *)0xE000E410))
@@ -49,6 +50,10 @@
 #define UART3_PRIORITY_LEVEL 2
 #define UART3_PRIORITY_BITS_POS 29
 
+#define GPIO_PORTF_PRIORITY_MASK      0xFF1FFFFF
+#define GPIO_PORTF_PRIORITY_BITS_POS  21
+#define GPIO_PORTF_INTERRUPT_PRIORITY 2
+
 #define TIMER1A_PRIORITY_MASK 0xFFFF1FFF
 #define TIMER1A_PRIORITY_LEVEL 3
 #define TIMER1A_PRIORITY_BITS_POS 13
@@ -56,6 +61,16 @@
 #define TIMER0A_PRIORITY_MASK 0x1FFFFFFF
 #define TIMER0A_PRIORITY_LEVEL 4
 #define TIMER0A_PRIORITY_BITS_POS 29
+
+
+/* PORTF External Interrupts Registers */
+#define GPIO_PORTF_IS_REG         (*((volatile unsigned long *)0x40025404))
+#define GPIO_PORTF_IBE_REG        (*((volatile unsigned long *)0x40025408))
+#define GPIO_PORTF_IEV_REG        (*((volatile unsigned long *)0x4002540C))
+#define GPIO_PORTF_IM_REG         (*((volatile unsigned long *)0x40025410))
+#define GPIO_PORTF_RIS_REG        (*((volatile unsigned long *)0x40025414))
+#define GPIO_PORTF_ICR_REG        (*((volatile unsigned long *)0x4002541C))
+
 
 /* Global Variable of type System_State used to block The System at a certain point for an amount of time */
 System_State state = BLOCKED;
@@ -75,6 +90,7 @@ uint8 (*authArray[numOfAvAuthMethods])(void) = {passwordAuth, rfidAuth, faceAuth
 
 void disableFuelPump(){
     Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_LOW);
+    Timer0_Stop();
 }
 
 void enableFuelPump(){
@@ -87,6 +103,42 @@ void toggleFuelPump(){
 
 void changeAuthOption(uint8 opt){
     numOfUsedAuthMethods = opt;
+    EEPROM_writeByte(NO_AUTH_USED_ADDRESS, numOfUsedAuthMethods);
+    Delay_ms(5);
+}
+
+
+/* 
+External Interrupt
+*/
+void tSwitch_Init(){
+    GPIO_PORTF_IS_REG &= ~(1 << 4);      /* PF4 detect edges */
+    GPIO_PORTF_IBE_REG |= (1 << 4);      /* PF4 will detect a certain edge */
+    GPIO_PORTF_ICR_REG |= (1 << 4);       /* Clear Trigger flag for PF4 (Interupt Flag) */
+    GPIO_PORTF_IM_REG |= (1 << 4);       /* Enable Interrupt on PF4 pin */
+    /* Set GPIO PORTF priotiy as 2 by set Bit number 22, 23 and 24 with value 2 */
+    NVIC_PRI7_REG = (NVIC_PRI7_REG & GPIO_PORTF_PRIORITY_MASK) | (GPIO_PORTF_INTERRUPT_PRIORITY << GPIO_PORTF_PRIORITY_BITS_POS);
+    NVIC_EN0_REG |= 0x40000000;   /* Enable NVIC Interrupt for GPIO PORTF by set bit number 30 in EN0 Register */
+}
+
+/* GPIO PORTF External Interrupt - ISR */
+void GPIOPortF_Handler(void)
+{
+    /* Check for pin status */
+    if(Dio_ReadChannel(DioConf_SW1_CHANNEL_ID_INDEX)){
+        if(Dio_ReadChannel(DioConf_LED1_CHANNEL_ID_INDEX)){
+            Dio_WriteChannel(DioConf_LED2_CHANNEL_ID_INDEX, STD_HIGH);
+        } else {
+            Dio_WriteChannel(DioConf_LED2_CHANNEL_ID_INDEX, STD_LOW);
+        }
+        Timer0_Init(); /* Reset the timer */
+        Timer0_Stop(); /* Stop it */
+    } else {
+        Dio_WriteChannel(DioConf_LED2_CHANNEL_ID_INDEX, STD_LOW);
+        Timer0_Init();
+        Timer0_Start();
+    }
+    GPIO_PORTF_ICR_REG   |= (1<<4);       /* Clear Trigger flag for PF0 (Interupt Flag) */
 }
 
 /*******************************************************************************************************
@@ -101,13 +153,15 @@ void Drivers_Init(void)
     Port_Init(&Port_Configuration);
     Dio_Init(&Dio_Configuration);
     Uart_Init(&Uart_Configuration);
+    tSwitch_Init();
     I2c_Init(&I2c_Confiuration);
     GPS_init();
     GSM_init();
     Timer1_setCallBack(GPS_updateLocation);
     Timer1_Init();
-    Timer0_setCallBack(toggleFuelPump);
+    Timer0_setCallBack(disableFuelPump);
     Timer0_Init();
+    Timer0_Stop();
     
     systemOffSetCallBackPtr(disableFuelPump);
     systemOnSetCallBackPtr(enableFuelPump);
@@ -127,7 +181,7 @@ int main(void){
     uint8 option = 0;
     uint8 otpCode[10];
     Drivers_Init();
-    g_numLocks = 3;
+    EEPROM_readByte(NO_AUTH_USED_ADDRESS, &numOfUsedAuthMethods);
     while(1){
         /* Read the EEPROM address for first time use */
         EEPROM_readByte(FIRST_TIME_ADDRESS, &g_first_time);
@@ -191,6 +245,8 @@ void systemSetup(void){
 
     /* Change first time to 0x00 to indicate that this is not the first time when reset occurs */
     EEPROM_writeByte(FIRST_TIME_ADDRESS, 0x00);
+    Delay_ms(5);
+    EEPROM_writeByte(NO_AUTH_USED_ADDRESS, 3);
     Delay_ms(5);
 }
 

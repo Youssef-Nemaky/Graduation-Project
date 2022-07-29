@@ -181,6 +181,9 @@ void SMS_handler(){
         }
 
         GSM_sendCommand(DELETE_ALL_SMS_CMD);
+    } else {
+        GSM_sendCommand(DELETE_ALL_SMS_CMD);
+
     }
 }
 
@@ -221,11 +224,11 @@ void GSM_sendSmsToUser(uint8 * message){
 }
 
 void systemOffSetCallBackPtr(void (*ptrToFunc) (void)){
-    connect_system_func_ptr = ptrToFunc;
+    disconnect_system_func_ptr = ptrToFunc;
 }
 
 void systemOnSetCallBackPtr(void (*ptrToFunc) (void)){
-    disconnect_system_func_ptr = ptrToFunc;
+    connect_system_func_ptr = ptrToFunc;
 }
 
 void changeAuthOptSetCallBackPtr(void (*ptrToFunc) (uint8)){

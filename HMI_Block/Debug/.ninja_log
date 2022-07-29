@@ -37,3 +37,21 @@
 232	304	6804732710069843	D:/Embedded_non-stop/Graduation Project/HMI_Block/Debug/Exe/gp.out	92f4afdb808e236c
 1	176	6804834295487425	D:/Embedded_non-stop/Graduation Project/HMI_Block/Debug/Obj/HMI_ECU.o	e94e08f802d29c28
 183	444	6804834298188227	D:/Embedded_non-stop/Graduation Project/HMI_Block/Debug/Exe/gp.out	92f4afdb808e236c
+7	325	6808177216515770	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/lcd.o	bf2096be6ce8727
+1	365	6808177216916093	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/HMI_ECU.o	57e464bf1cea3cf3
+374	598	6808177219265424	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Exe/gp.out	27c6e0532e31d153
+2	150	6808177416479559	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/Det.o	81c31ce97cd20b45
+23	176	6808177416642347	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/HMI_ECU.o	57e464bf1cea3cf3
+14	188	6808177416782368	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/Dio_PBcfg.o	aef272f46e2db610
+20	271	6808177417642392	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/Dio.o	93509f628345438d
+158	295	6808177417862333	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/lcd.o	bf2096be6ce8727
+197	351	6808177418492356	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/RFID.o	19b64f795fb0ef50
+306	400	6808177418972356	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/keypad.o	8d75559d890d3b61
+279	427	6808177419252388	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/Spi.o	ed017490d59e129e
+359	464	6808177419632361	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/Port_PBcfg.o	b97cc343042702b5
+184	500	6808177419962349	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/Port.o	9f47b217cfdacb96
+409	524	6808177420082358	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/Sw_Delay.o	84fc1df14e8e5b1e
+437	540	6808177420282376	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/Spi_PBcfg.o	5c7f6519d32674b1
+474	555	6808177420472347	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/Uart_PBcfg.o	4d0bde19361e6bbe
+509	607	6808177421052325	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Obj/uart.o	5e187ec8c5847f8e
+615	669	6808177421682704	D:/embedded_non-stop/Graduation-Project/HMI_Block/Debug/Exe/gp.out	27c6e0532e31d153

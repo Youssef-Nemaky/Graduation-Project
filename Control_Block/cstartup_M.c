@@ -28,6 +28,7 @@ extern void SysTick_Handler( void );
 extern void UART3_Handler( void );
 extern void Timer1_Handler( void );
 extern void Timer0_Handler( void );
+extern void GPIOPortF_Handler( void );
 
 typedef void( *intfunc )( void );
 typedef union { intfunc __fun; void * __ptr; } intvec_elem;
@@ -93,7 +94,7 @@ const intvec_elem __vector_table[] =
   0, /*43 */
   0, /*44 */
   0, /*45 */
-  0, /*46 */
+  GPIOPortF_Handler, /*46 */
   0,  /*47 */
   0,  /*48 */
   0,  /*49 */

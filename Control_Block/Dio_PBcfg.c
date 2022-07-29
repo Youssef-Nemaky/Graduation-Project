@@ -43,5 +43,7 @@
 const Dio_ConfigType Dio_Configuration = {
 							/* Normal Channels - Port Number, Channel Number */
                             DioConf_LED1_PORT_NUM,DioConf_LED1_CHANNEL_NUM,
+                            DioConf_LED2_PORT_NUM,DioConf_LED2_CHANNEL_NUM,
+                            DioConf_SW1_PORT_NUM,DioConf_SW1_CHANNEL_NUM,
 				         };
 

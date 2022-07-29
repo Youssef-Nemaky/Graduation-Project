@@ -80,7 +80,6 @@ int main(void)
             break;
         case LOOK_AT_CAMERA_CMD:
             LCD_displayString("Smile to the camera!");
-            LCD_displayStringRowColumn(1,0, "Wait for green light");
             break;
         /* FOR DEBUGGING PURPOSES */
         case FACE_SETUP_FAILED_CMD:
