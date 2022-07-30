@@ -52,7 +52,7 @@
 
 #define GPIO_PORTF_PRIORITY_MASK      0xFF1FFFFF
 #define GPIO_PORTF_PRIORITY_BITS_POS  21
-#define GPIO_PORTF_INTERRUPT_PRIORITY 2
+#define GPIO_PORTF_INTERRUPT_PRIORITY 4
 
 #define TIMER1A_PRIORITY_MASK 0xFFFF1FFF
 #define TIMER1A_PRIORITY_LEVEL 3
@@ -95,6 +95,7 @@ void disableFuelPump(){
 
 void enableFuelPump(){
     Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_HIGH);
+    Timer0_Stop();
 }
 
 void toggleFuelPump(){
@@ -112,8 +113,10 @@ void changeAuthOption(uint8 opt){
 External Interrupt
 */
 void tSwitch_Init(){
+    GPIO_PORTF_IM_REG &= ~(1 << 4);       /* Enable Interrupt on PF4 pin */
     GPIO_PORTF_IS_REG &= ~(1 << 4);      /* PF4 detect edges */
     GPIO_PORTF_IBE_REG |= (1 << 4);      /* PF4 will detect a certain edge */
+    GPIO_PORTF_RIS_REG |= (1 << 4);
     GPIO_PORTF_ICR_REG |= (1 << 4);       /* Clear Trigger flag for PF4 (Interupt Flag) */
     GPIO_PORTF_IM_REG |= (1 << 4);       /* Enable Interrupt on PF4 pin */
     /* Set GPIO PORTF priotiy as 2 by set Bit number 22, 23 and 24 with value 2 */
@@ -126,19 +129,17 @@ void GPIOPortF_Handler(void)
 {
     /* Check for pin status */
     if(Dio_ReadChannel(DioConf_SW1_CHANNEL_ID_INDEX)){
-        if(Dio_ReadChannel(DioConf_LED1_CHANNEL_ID_INDEX)){
-            Dio_WriteChannel(DioConf_LED2_CHANNEL_ID_INDEX, STD_HIGH);
-        } else {
-            Dio_WriteChannel(DioConf_LED2_CHANNEL_ID_INDEX, STD_LOW);
-        }
         Timer0_Init(); /* Reset the timer */
         Timer0_Stop(); /* Stop it */
     } else {
-        Dio_WriteChannel(DioConf_LED2_CHANNEL_ID_INDEX, STD_LOW);
         Timer0_Init();
         Timer0_Start();
     }
+    Delay_ms(50); /* BAD THING TO DO BUT FOR TESTING */
+    GPIO_PORTF_RIS_REG |= (1 << 4);
     GPIO_PORTF_ICR_REG   |= (1<<4);       /* Clear Trigger flag for PF0 (Interupt Flag) */
+    
+
 }
 
 /*******************************************************************************************************
@@ -200,7 +201,7 @@ int main(void){
                 if (systemAuth()) {
                     /* OUTPUT 1 to a pin */
                     /* Do in a function later plz */
-                    Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_HIGH);
+                    enableFuelPump();
                     Uart_SendByte(HMI_BLOCK_UART, ACCESS_GRANTED_CMD);
                 }
                 break;
@@ -218,7 +219,7 @@ int main(void){
                 }
                 break;
             case 4:
-                Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_LOW);
+                disableFuelPump();
                 EEPROM_writeByte(FIRST_TIME_ADDRESS, 0xFF);
                 Delay_ms(10);
                 EEPROM_writeByte(WRONG_ATTEMPTS_ADDRESS, 0);
@@ -392,7 +393,7 @@ boolean systemAuth(void){
                 g_numLocks = 0;
                 return FALSE;
             } else {
-                Dio_WriteChannel(DioConf_LED1_CHANNEL_ID_INDEX, STD_LOW);
+                disableFuelPump();
                 Uart_SendByte(HMI_BLOCK_UART, LOCK_CMD);
                 GPS_updateLocation();
                 NVIC_EN1_REG &= ~(1 << 27);

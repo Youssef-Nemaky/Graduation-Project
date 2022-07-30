@@ -28,20 +28,23 @@
  */
 #define GSM_SET_BEARER_PARAMS_CMD "AT+SAPBR=3,1,\"Contype\",\"GPRS\""
 /* 
-Vodafone APN Settings 
+Vodafone APN Settings */
 #define GSM_SET_APN_SETTINGS_CMD "AT+SAPBR=3,1,\"APN\",\"internet.vodafone.net\""
 #define GSM_SET_APN_USER_CMD "AT+SAPBR=3,1,\"USER\",\"internet\""
 #define GSM_SET_APN_PWD_CMD "AT+SAPBR=3,1,\"PWD\",\"internet\""
-*/
 
 
-/* WE APN Settings */
+
+/* WE APN Settings 
 #define GSM_SET_APN_SETTINGS_CMD "AT+SAPBR=3,1,\"APN\",\"internet.we.net\""
 #define GSM_SET_APN_USER_CMD "AT+SAPBR=3,1,\"USER\",\"\""
 #define GSM_SET_APN_PWD_CMD "AT+SAPBR=3,1,\"PWD\",\"\""
+*/
+
 #define GSM_QUERY_BEARER_CMD "AT+SAPBR=2,1"
 #define GSM_IGNORE_EMPTY_SMS_CMD "AT+CSMP=17,167,0,0"
 
+/* System Control Commands */
 #define SECURITY_SYSTEM_ON_CMD "systemOn"
 #define SECURITY_SYSTEM_OFF_CMD "systemOff"
 #define AUTH_OPT_1 "auth = op1"
@@ -53,7 +56,7 @@ Vodafone APN Settings
 #define SMS_RECEIVED "+CMTI"
 #define SMS_READ "+CMGR"
 #define READ_SMS_CMD "AT+CMGR="
-#define DELETE_ALL_SMS_CMD "AT+CMGD=1,4"
+#define DELETE_ALL_SMS_CMD "AT+CMGD=1,1"
 
 
 

@@ -80,6 +80,7 @@ void GPS_updateLocation(void){
     if( ( strcmp((uint8 *)latitude, "") == 0 ) && ( strcmp((uint8 *)longitude, "") == 0 ) ){
         return;
     }
+    Delay_ms(250);
     GSM_connectGPRS();
     strcat((uint8 *)httpMessageBody, API_KEY);
     strcat((uint8 *)httpMessageBody, "&field1=");
